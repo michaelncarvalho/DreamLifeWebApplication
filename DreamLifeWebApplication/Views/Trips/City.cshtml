@@ -1,0 +1,85 @@
+﻿<!-- View of the trips read by the API 
+    UI interface
+    
+-->
+
+@model DreamLifeWebApplication.Models.TripsCollection
+
+@{
+    ViewBag.Title = "City";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    int counterTripID = -1; //number of trips add into the page
+}
+
+
+
+<div id="app">
+    <div class="panel panel-default">
+        <div class="panel-heading panel-heading-custom">
+            <h1 class="centralizado">My Trips</h1>
+        </div>
+        <div class="panel-body centralizado" id="tripInformation">
+            <p>Choose a trip</p>
+        </div>
+    </div>
+
+
+    <!-- For each Trip retrived from the trips.json, it will be render on the page in this component 
+        
+        When this component is clicked, the function "updateTripMenu(this.id)" is called.
+        This function is presented on the ~/Scripts/updateTripInfo.js
+        
+     -->
+    @foreach (var Item in Model.tripsCollection)
+    {
+
+        counterTripID++;
+        <div class="componente tripContainer" id="@counterTripID" value="@counterTripID" style="cursor: pointer;" onclick="updateTripMenu(this.id)">
+            <div class="row ">
+                <div class="col-sm-2"> <img class="align-self-center mr-3" src="@Item.Thumb" alt="dubaiImg" width="130" height="100 "></div>
+                <div class="col-sm-9">
+                    @for (int i = 0; i < Item.Stars; i++)
+                    {
+                        <i class="fa fa-star" style="color:yellow"></i>
+                    }
+                    <h2 style="color: darkslateblue;"><b>@Item.HotelName</b> </h2>
+                    <h4>@Item.Location, @Item.City.Name</h4>
+                    <h3 align="right" style="color:dodgerblue"><b>$@Item.Price,00</b></h3>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        string cityNameId = "PassingToJavaScriptCityName" + @counterTripID;
+        string dateId = "PassingToJavaScriptDate" + @counterTripID;
+        string priceId = "PassingToJavaScriptPrice" + @counterTripID;
+        string guestId = "PassingToJavaScriptGuest" + @counterTripID;
+        string classId = "PassingToJavaScriptClass" + @counterTripID;
+        string hotelNameId = "PassingToJavaScriptHotelName" + @counterTripID;
+
+
+        // Passing data to Javascript to update the trip information
+        <input type="hidden" id="@cityNameId" value=@Item.City.Name>
+        <input type="hidden" id="@dateId" value=@Item.Date>
+        <input type="hidden" id="@priceId" value=@Item.Price>
+        <input type="hidden" id="@guestId" value=@Item.Guest>
+        <input type="hidden" id="@classId" value=@Item.Class>
+        <input type="hidden" id="@hotelNameId" value=@Item.HotelName>
+
+
+
+    }
+
+</div>
+
+
+
+
+
+
+

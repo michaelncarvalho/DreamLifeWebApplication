@@ -1,0 +1,24 @@
+﻿<!-- Home page View -->
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("City", "Trips", FormMethod.Get))
+{
+
+    <div class="jumbotron">
+
+        <h3>
+            Enter the ID city
+            <small class="text-muted">(Dubai: 132)</small>
+        </h3>
+        @Html.TextBox("GetTripsByCity", "132", new { @class = "form-control" })<br />
+
+        <input class="btn btn-primary btn-lg" id="Submit" type="submit" value="submit" />
+
+    </div>
+
+
+}

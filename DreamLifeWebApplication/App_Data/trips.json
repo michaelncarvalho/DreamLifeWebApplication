@@ -1,0 +1,77 @@
+[
+  {
+    "hotelName": "Jumeirah Creekside Hotel",
+    "thumb": "https://www.thenational.ae/image/policy:1.113338:1499266624/image/jpeg.jpg?f=16x9&w=1200&$p$f$w=dfa40e8",
+    "stars": 5,
+    "location": "Garghoud",
+    "city": {
+      "id": "132",
+      "name": "Dubai"
+    },
+    "country": "UAE",
+    "date": "2019-03-17",
+    "price": 800,
+    "class": "First Class",
+    "guest": 1
+  },
+  {
+    "hotelName": "City Premier Hotel Apartments",
+    "thumb": "https://r-ec.bstatic.com/images/hotel/max1024x768/988/9886262.jpg",
+    "stars": 4,
+    "location": "Metro Access",
+    "city": {
+      "id": 132,
+      "name": "Dubai"
+    },
+    "country": "UAE",
+    "date": "2019-03-21",
+    "price": 700,
+    "class": "Business Class",
+    "guest": 1
+  },
+  {
+    "hotelName": "Dusit Thani Dubai",
+    "thumb": "https://cache.marriott.com/marriottassets/marriott/DXBMH/dxbmh-exterior-0051-hor-feat.jpg?interpolation=progressive-bilinear&downsize=1180px:*",
+    "stars": 4,
+    "location": "Trade Centre",
+    "city": {
+      "id": 132,
+      "name": "Dubai"
+    },
+    "country": "UAE",
+    "date": "2019-03-30",
+    "price": 750,
+    "class": "First Class",
+    "guest": 1
+  },
+  {
+    "hotelName" : "Temple Dubai Business",
+    "thumb": "https://loremflickr.com/130/100/dubai",
+    "stars" : 5,
+    "location" : "Galley",
+    "city": {
+        "id": 132,
+        "name": "Dubai"
+    },
+    "country": "UAE",
+    "date": "2019-01-12",
+    "price": 1270,
+    "class": "First Class",
+    "guest": 1
+  },
+  {
+    "hotelName" : "Petit France Hotel",
+    "thumb": "https://loremflickr.com/130/100/lyon",
+    "stars" : 5,
+    "location" : "Vieux Lyon",
+    "city": {
+        "id": 42,
+        "name": "Lyon"
+    },
+    "country": "France",
+    "date": "2019-05-22",
+    "price": 570,
+    "class": "First Class",
+    "guest": 1
+  }
+]
