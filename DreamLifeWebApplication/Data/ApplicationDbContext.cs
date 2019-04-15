@@ -9,7 +9,7 @@ namespace DreamLifeWebApplication.Context
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext() : base("DefaultConnection")
+        public ApplicationDbContext() : base("ViagensContext")
         {
         }
 

@@ -2,7 +2,7 @@
   "compileOnSave": false,
 
   "include": [
-    "./src"
+    "./src", "Data"
   ],
   "compilerOptions": {
     "baseUrl": "./",
