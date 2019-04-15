@@ -7,13 +7,13 @@ namespace DreamLifeWebApplication.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Initial : IMigrationMetadata
+    public sealed partial class CriacaoTabelasCidadeViagemHotel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CriacaoTabelasCidadeViagemHotel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904151941136_Initial"; }
+            get { return "201904152015267_Criacao-Tabelas-Cidade-Viagem-Hotel"; }
         }
         
         string IMigrationMetadata.Source

@@ -13,8 +13,10 @@ namespace DreamLifeWebApplication.Context
         {
         }
 
-        public static ApplicationDbContext Create() => new ApplicationDbContext();
+        public static ApplicationDbContext Create() => new ApplicationDbContext();        
 
-        public DbSet<JoggingRecord> JoggingRecords { get; set; }
+        public DbSet<Cidade> Cidade { get; set; }
+        public DbSet<Hotel> Hotel { get; set; }
+        public DbSet<Viagem> Viagem { get; set; }
     }
 }

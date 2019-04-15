@@ -187,14 +187,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904151941136_Initial.cs" />
-    <Compile Include="Migrations\201904151941136_Initial.Designer.cs">
-      <DependentUpon>201904151941136_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201904152015267_Criacao-Tabelas-Cidade-Viagem-Hotel.cs" />
+    <Compile Include="Migrations\201904152015267_Criacao-Tabelas-Cidade-Viagem-Hotel.Designer.cs">
+      <DependentUpon>201904152015267_Criacao-Tabelas-Cidade-Viagem-Hotel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Cidade.cs" />
+    <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\JoggingRecord.cs" />
     <Compile Include="Models\TripData.cs" />
     <Compile Include="Models\TripsCollection.cs" />
+    <Compile Include="Models\Viagem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -291,8 +294,8 @@
     <Folder Include="Scripts\libs\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904151941136_Initial.resx">
-      <DependentUpon>201904151941136_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904152015267_Criacao-Tabelas-Cidade-Viagem-Hotel.resx">
+      <DependentUpon>201904152015267_Criacao-Tabelas-Cidade-Viagem-Hotel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
