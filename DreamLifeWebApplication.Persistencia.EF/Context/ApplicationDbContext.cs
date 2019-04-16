@@ -13,7 +13,8 @@ namespace DreamLifeWebApplication.Persistencia.EF
     {
         public ApplicationDbContext() : base("ViagensContext")
         {
-            Database.SetInitializer<ApplicationDbContext>(new ApplicationDbInitializer());        }
+            Database.SetInitializer<ApplicationDbContext>(null);
+        }
 
         public static ApplicationDbContext Create() => new ApplicationDbContext();
 

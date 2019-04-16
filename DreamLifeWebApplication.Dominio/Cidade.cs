@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DreamLifeWebApplication.Dominio
 {
+    [Table("cidade")]
     public class Cidade
     {
         public int Id { get; set; }

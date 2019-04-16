@@ -67,11 +67,6 @@
   <ItemGroup>
     <Compile Include="Context\ApplicationDbContext.cs" />
     <Compile Include="Context\ApplicationDbInitializer.cs" />
-    <Compile Include="Migrations\201904161709163_InitialCreate.cs" />
-    <Compile Include="Migrations\201904161709163_InitialCreate.Designer.cs">
-      <DependentUpon>201904161709163_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -83,11 +78,6 @@
       <Project>{42a1c6c2-dea1-46cc-a6ed-43ca298c24f5}</Project>
       <Name>DreamLifeWebApplication.Dominio</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904161709163_InitialCreate.resx">
-      <DependentUpon>201904161709163_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

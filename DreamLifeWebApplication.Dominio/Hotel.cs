@@ -14,6 +14,5 @@ namespace DreamLifeWebApplication.Dominio
         public double Preco { get; set; }
         public int Classificacao { get; set; }
         public string Descricao { get; set; }
-        public string ImagemURL { get; set; }
     }
 }

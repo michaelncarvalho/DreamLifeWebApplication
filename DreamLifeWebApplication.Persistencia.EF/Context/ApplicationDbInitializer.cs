@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DreamLifeWebApplication.Persistencia.EF.Context
 {
-    public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
+    public class ApplicationDbInitializer : CreateDatabaseIfNotExists<ApplicationDbContext>
     {
         protected override void Seed(ApplicationDbContext context)
         {
@@ -40,16 +40,14 @@ namespace DreamLifeWebApplication.Persistencia.EF.Context
                 CidadeId = context.Cidades.FirstOrDefault(c => c.Nome == "Lavras").Id,
                 Preco = 123.55,
                 Classificacao = 3,
-                Descricao = "Hotel modesto no centro com quartos despretensiosos, além de café da manhã e estacionamento gratuitos",
-                ImagemURL = "imagem.jpg"
+                Descricao = "Hotel modesto no centro com quartos despretensiosos, além de café da manhã e estacionamento gratuitos",              
                 
             });
             context.Hoteis.Add(new Hotel
             {
                 Nome = "Minas Hotel",
                 CidadeId = context.Cidades.FirstOrDefault(c => c.Nome == "Lavras").Id,
-                Descricao = "Ótimas localizações. Ofertas em acomodação exclusivas durante períodos de grande demanda",
-                ImagemURL = "imagem.jpg"
+                Descricao = "Ótimas localizações. Ofertas em acomodação exclusivas durante períodos de grande demanda",               
 
             });
             context.SaveChanges();
