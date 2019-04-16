@@ -1,4 +1,5 @@
 ﻿using DreamLifeWebApplication.Context;
+using DreamLifeWebApplication.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,15 @@ namespace DreamLifeWebApplication
     {
         protected void Application_Start()
         {
-            using(var db = new ApplicationDbContext())
+            using(var context = new ApplicationDbContext())
             {
-
+                context.Cidade.Add(new Cidade
+                {
+                    Nome = "Sete Lagoas",
+                    Pais = "Brasil",
+                    Estado = "MG",
+                });
+                context.SaveChanges();
             }
 
             AreaRegistration.RegisterAllAreas();

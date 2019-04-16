@@ -11,9 +11,16 @@ namespace DreamLifeWebApplication.Persistencia.EF
 {
     public class ApplicationDbContext : DbContext
     {
+      
+
         public ApplicationDbContext() : base("ViagensContext")
         {
-            Database.SetInitializer<ApplicationDbContext>(null);
+            //Database.SetInitializer<ApplicationDbContext>(null);
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.HasDefaultSchema("mytrips");
         }
 
         public static ApplicationDbContext Create() => new ApplicationDbContext();
