@@ -1,18 +1,18 @@
-namespace DreamLifeWebApplication.Migrations
+namespace DreamLifeWebApplication.Persistencia.EF.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DreamLifeWebApplication.Context.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DreamLifeWebApplication.Persistencia.EF.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(DreamLifeWebApplication.Context.ApplicationDbContext context)
+        protected override void Seed(DreamLifeWebApplication.Persistencia.EF.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

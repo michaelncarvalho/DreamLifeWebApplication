@@ -188,18 +188,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904152015267_Criacao-Tabelas-Cidade-Viagem-Hotel.cs" />
-    <Compile Include="Migrations\201904152015267_Criacao-Tabelas-Cidade-Viagem-Hotel.Designer.cs">
-      <DependentUpon>201904152015267_Criacao-Tabelas-Cidade-Viagem-Hotel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Cidade.cs" />
-    <Compile Include="Models\Hotel.cs" />
-    <Compile Include="Models\IRepositorioCidade.cs" />
-    <Compile Include="Models\IRepositorioHotel.cs" />
     <Compile Include="Models\TripData.cs" />
     <Compile Include="Models\TripsCollection.cs" />
-    <Compile Include="Models\Viagem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -296,9 +286,14 @@
     <Folder Include="Scripts\libs\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904152015267_Criacao-Tabelas-Cidade-Viagem-Hotel.resx">
-      <DependentUpon>201904152015267_Criacao-Tabelas-Cidade-Viagem-Hotel.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\DreamLifeWebApplication.Dominio\DreamLifeWebApplication.Dominio.csproj">
+      <Project>{42a1c6c2-dea1-46cc-a6ed-43ca298c24f5}</Project>
+      <Name>DreamLifeWebApplication.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DreamLifeWebApplication.Repositorio\DreamLifeWebApplication.Repositorio.csproj">
+      <Project>{b4b4fe05-b993-4831-a1e0-3de2d4784f0d}</Project>
+      <Name>DreamLifeWebApplication.Repositorio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

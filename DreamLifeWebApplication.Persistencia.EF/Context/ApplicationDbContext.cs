@@ -1,12 +1,12 @@
 ﻿using DreamLifeWebApplication.Dominio;
-using DreamLifeWebApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace DreamLifeWebApplication.Context
+namespace DreamLifeWebApplication.Persistencia.EF
 {
     public class ApplicationDbContext : DbContext
     {
@@ -14,7 +14,7 @@ namespace DreamLifeWebApplication.Context
         {
         }
 
-        public static ApplicationDbContext Create() => new ApplicationDbContext();        
+        public static ApplicationDbContext Create() => new ApplicationDbContext();
 
         public DbSet<Cidade> Cidade { get; set; }
         public DbSet<Hotel> Hotel { get; set; }
