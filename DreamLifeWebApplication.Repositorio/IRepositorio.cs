@@ -8,7 +8,7 @@ namespace DreamLifeWebApplication.Repositorio
 {
     public interface IRepositorio<TDominio>
     {
-        TDominio SelecionarPorId();
+        TDominio SelecionarPorId(int id);
         void Inserir (TDominio entidade);
         void Atualizar(TDominio entidade);
         void Excluir(TDominio entidade);
