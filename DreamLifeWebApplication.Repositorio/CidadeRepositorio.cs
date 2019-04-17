@@ -10,6 +10,8 @@ namespace DreamLifeWebApplication.Repositorio
 {
     public class CidadeRepositorio : IRepositorio<Cidade>
     {
+        
+
         public Cidade SelecionarPorId(int id)
         {
             using ( ApplicationDbContext contexto = new ApplicationDbContext())
@@ -35,9 +37,14 @@ namespace DreamLifeWebApplication.Repositorio
             throw new NotImplementedException();
         }
 
-       
+        public List<Cidade> SelecionarTodos()
+        {
+            using (ApplicationDbContext contexto = new ApplicationDbContext())
+            {
+                return contexto.Cidades.ToList();
+            }
+        }
 
-       
     }
 
 }

@@ -12,5 +12,6 @@ namespace DreamLifeWebApplication.Repositorio
         void Inserir (TDominio entidade);
         void Atualizar(TDominio entidade);
         void Excluir(TDominio entidade);
+        List<TDominio> SelecionarTodos();
     }
 }
