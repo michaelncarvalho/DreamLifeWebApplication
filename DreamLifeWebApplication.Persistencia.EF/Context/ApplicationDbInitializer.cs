@@ -18,19 +18,16 @@ namespace DreamLifeWebApplication.Persistencia.EF.Context
             {
                 Nome = "Lavras",
                 Pais = "Brasil",
-                Estado = "MG",
             });
             context.Cidades.Add(new Cidade
             {
                 Nome = "Sete Lagoas",
                 Pais = "Brasil",
-                Estado = "MG",
             });
             context.Cidades.Add(new Cidade
             {
                 Nome = "São Carlos",
                 Pais = "Brasil",
-                Estado = "SP",
             });
             context.SaveChanges();
             //Seeding Hoteis

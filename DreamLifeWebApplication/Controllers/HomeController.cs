@@ -26,14 +26,14 @@ namespace DreamLifeWebApplication.Controllers
         {
 
             // Teste Selecionar Todos
+            //IRepositorio<Cidade> repositorioCidades = new CidadeRepositorio();
+            //List<Cidade> cidades = repositorioCidades.SelecionarTodos();
+
+           
             IRepositorio<Cidade> repositorioCidades = new CidadeRepositorio();
-            List<Cidade> cidades = repositorioCidades.SelecionarTodos();
+            Cidade cidadeExcluir = repositorioCidades.SelecionarPorId(1);
+            repositorioCidades.Excluir(cidadeExcluir);
 
-            Cidade std = repositorioCidades.SelecionarPorId(1);
-            std.Nome = "Lavras Novas";
-            repositorioCidades.Atualizar(std);
-
-            
             return View();
         }
         
