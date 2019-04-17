@@ -24,7 +24,6 @@ namespace DreamLifeWebApplication.Controllers
 
         public ActionResult About()
         {
-           
             return View();
         }
         

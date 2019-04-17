@@ -2,7 +2,7 @@
   "compileOnSave": false,
 
   "include": [
-    "./src", "Data"
+    "./src", "Data", "../DreamLifeWebApplication.Repositorio/ViagemRepositorio.cs"
   ],
   "compilerOptions": {
     "baseUrl": "./",
