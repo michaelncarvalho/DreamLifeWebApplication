@@ -22,5 +22,8 @@ namespace DreamLifeWebApplication.Dominio
         public int Classificacao { get; set; }
         [Column("descricao")]
         public string Descricao { get; set; }
+        
+        public Cidade Cidade { get; set; }
+        public List<Viagem> Viagens { get; set; }
     }
 }

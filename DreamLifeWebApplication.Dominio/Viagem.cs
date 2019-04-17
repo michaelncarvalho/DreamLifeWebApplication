@@ -20,5 +20,6 @@ namespace DreamLifeWebApplication.Dominio
         public int QuantidadePessoas { get; set; }
         [Column("modalidade_viagem")]
         public string ModalidadeViagem { get; set; }
+        public Hotel Hotel { get; set; }
     }
 }

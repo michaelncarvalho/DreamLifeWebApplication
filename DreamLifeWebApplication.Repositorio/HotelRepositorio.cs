@@ -8,56 +8,57 @@ using System.Threading.Tasks;
 
 namespace DreamLifeWebApplication.Repositorio
 {
-    public class CidadeRepositorio : IRepositorio<Cidade>
+    public class HotelRepositorio : IRepositorio<Hotel>
     {
-        
+               
 
-       
-        public void Inserir(Cidade entidade)
+        public void Inserir(Hotel entidade)
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
-                contexto.Cidades.Add(entidade);
+                Cidade cidade = contexto.Cidades.Find(entidade.CidadeId);
+                entidade.Cidade = cidade;
+                contexto.Hoteis.Add(entidade);
                 contexto.SaveChanges();
             }
         }
-        public void Atualizar(Cidade entidade)
+        public void Atualizar(Hotel entidade)
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
-                contexto.Cidades.Attach(entidade);
+                Cidade cidade = contexto.Cidades.Find(entidade.CidadeId);
+                entidade.Cidade = cidade;
+                contexto.Hoteis.Attach(entidade);
                 contexto.Entry(entidade).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
             }
         }
-
-        public void Excluir(Cidade entidade)
+        public void Excluir(Hotel entidade)
         {
-            using(ApplicationDbContext contexto = new ApplicationDbContext())
+            using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
-                contexto.Cidades.Attach(entidade);
+                Cidade cidade = contexto.Cidades.Find(entidade.CidadeId);
+                contexto.Hoteis.Attach(entidade);
                 contexto.Entry(entidade).State = System.Data.Entity.EntityState.Deleted;
                 contexto.SaveChanges();
             }
         }
 
-        public Cidade SelecionarPorId(int id)
+        public Hotel SelecionarPorId(int id)
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
-                return contexto.Cidades.Find(id);
+                return contexto.Hoteis.Find(id)
+;
             }
         }
 
-        public List<Cidade> SelecionarTodos()
+        public List<Hotel> SelecionarTodos()
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
-                return contexto.Cidades.ToList();
+                return contexto.Hoteis.ToList();
             }
         }
-
     }
-
 }
-
