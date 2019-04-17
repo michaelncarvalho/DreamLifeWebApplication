@@ -29,12 +29,22 @@ namespace DreamLifeWebApplication.Repositorio
         }
         public void Atualizar(Cidade entidade)
         {
-            throw new NotImplementedException();
+            using (ApplicationDbContext contexto = new ApplicationDbContext())
+            {
+                contexto.Cidades.Attach(entidade);
+                contexto.Entry(entidade).State = System.Data.Entity.EntityState.Modified;
+                contexto.SaveChanges();
+            }
         }
 
         public void Excluir(Cidade entidade)
         {
-            throw new NotImplementedException();
+            using(ApplicationDbContext contexto = new ApplicationDbContext())
+            {
+                contexto.Cidades.Attach(entidade);
+                contexto.Entry(entidade).State = System.Data.Entity.EntityState.Deleted;
+                contexto.SaveChanges();
+            }
         }
 
         public List<Cidade> SelecionarTodos()

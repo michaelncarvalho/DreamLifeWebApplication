@@ -20,7 +20,23 @@ namespace DreamLifeWebApplication.Persistencia.EF
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("mytrips");
+
+            modelBuilder
+                .HasDefaultSchema("mytrips")
+                .Entity<Hotel>()
+                .HasRequired(h => h.Cidade)
+                .WithMany(h => h.Hotels)
+                .HasForeignKey(fk => fk.CidadeId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder
+                .HasDefaultSchema("mytrips")
+                .Entity<Viagem>()
+                .HasRequired(v => v.Hotel)
+                .WithMany(v => v.Viagens)
+                .HasForeignKey(fk => fk.HotelId)
+                .WillCascadeOnDelete(false);                
+         
         }
 
         public static ApplicationDbContext Create() => new ApplicationDbContext();
