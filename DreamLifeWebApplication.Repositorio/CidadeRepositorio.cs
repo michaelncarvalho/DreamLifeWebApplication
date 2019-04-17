@@ -45,8 +45,7 @@ namespace DreamLifeWebApplication.Repositorio
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
-                return contexto.Cidades.Find(id)
-;
+                return contexto.Cidades.Find(id);
             }
         }
 

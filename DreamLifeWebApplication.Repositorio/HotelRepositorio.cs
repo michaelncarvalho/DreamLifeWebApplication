@@ -16,6 +16,8 @@ namespace DreamLifeWebApplication.Repositorio
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
+                Cidade cidade = contexto.Cidades.Find(entidade.CidadeId);
+                entidade.Cidade = cidade;
                 contexto.Hoteis.Add(entidade);
                 contexto.SaveChanges();
             }
@@ -24,6 +26,8 @@ namespace DreamLifeWebApplication.Repositorio
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
+                Cidade cidade = contexto.Cidades.Find(entidade.CidadeId);
+                entidade.Cidade = cidade;
                 contexto.Hoteis.Attach(entidade);
                 contexto.Entry(entidade).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
@@ -33,6 +37,7 @@ namespace DreamLifeWebApplication.Repositorio
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
+                Cidade cidade = contexto.Cidades.Find(entidade.CidadeId);
                 contexto.Hoteis.Attach(entidade);
                 contexto.Entry(entidade).State = System.Data.Entity.EntityState.Deleted;
                 contexto.SaveChanges();

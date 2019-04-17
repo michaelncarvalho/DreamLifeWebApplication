@@ -24,16 +24,7 @@ namespace DreamLifeWebApplication.Controllers
 
         public ActionResult About()
         {
-
-            // Teste Selecionar Todos
-            //IRepositorio<Cidade> repositorioCidades = new CidadeRepositorio();
-            //List<Cidade> cidades = repositorioCidades.SelecionarTodos();
-
            
-            IRepositorio<Cidade> repositorioCidades = new CidadeRepositorio();
-            Cidade cidadeExcluir = repositorioCidades.SelecionarPorId(1);
-            repositorioCidades.Excluir(cidadeExcluir);
-
             return View();
         }
         

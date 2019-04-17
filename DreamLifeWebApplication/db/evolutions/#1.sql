@@ -5,8 +5,7 @@ CREATE TABLE mytrips.cidade(
 	id SERIAL NOT NULL,
 	nome CHARACTER VARYING(255),
 	pais CHARACTER VARYING(255),
-	estado VARCHAR(2),
-	CONSTRAINT pk_cidadades PRIMARY KEY(id)
+	CONSTRAINT pk_cidade PRIMARY KEY(id)
 );
 
 CREATE TABLE mytrips.hotel(
@@ -16,8 +15,8 @@ CREATE TABLE mytrips.hotel(
 	preco DOUBLE PRECISION,
     classificacao INTEGER,
     descricao TEXT,	
-	CONSTRAINT pk_hotels PRIMARY KEY(id),
-	CONSTRAINT fk_h_cidades FOREIGN KEY (id_cidade) REFERENCES mytrips.cidade(id)
+	CONSTRAINT pk_hotel PRIMARY KEY(id),
+	CONSTRAINT fk_h_cidade FOREIGN KEY (id_cidade) REFERENCES mytrips.cidade(id)
 );
 
 CREATE TABLE mytrips.viagem(
@@ -26,8 +25,8 @@ CREATE TABLE mytrips.viagem(
 	data_viagem DATE,
 	quantidade_pessoas INTEGER,
 	modalidade_viagem VARCHAR(100),
-	CONSTRAINT pk_viagens PRIMARY KEY(id),
-	CONSTRAINT fk_v_hoteis FOREIGN KEY(id_hotel) REFERENCES mytrips.hotel(id) 
+	CONSTRAINT pk_viagem PRIMARY KEY(id),
+	CONSTRAINT fk_v_hotel FOREIGN KEY(id_hotel) REFERENCES mytrips.hotel(id) 
 );
 
 COMMENT ON TABLE mytrips.cidade IS 'Entidade responsável por armazenar as informações das cidades';
