@@ -13,11 +13,11 @@ namespace DreamLifeWeb_api.Controllers
 {
     public class CidadesController : ApiController
     {
+        private IRepositorio<Cidade> cidadeRepositorio = new CidadeRepositorio();
         //GET: trips/Cidades
         [HttpGet]
         public List<Cidade> Get()
-        {
-            IRepositorio<Cidade> cidadeRepositorio = new CidadeRepositorio();
+        {            
             return cidadeRepositorio.SelecionarTodos();
         }
 
@@ -25,7 +25,7 @@ namespace DreamLifeWeb_api.Controllers
         [HttpGet]
         public Cidade Get(int id)
         {
-            IRepositorio<Cidade> cidadeRepositorio = new CidadeRepositorio();
+           
             return cidadeRepositorio.SelecionarPorId(id);
         }
 
@@ -37,7 +37,7 @@ namespace DreamLifeWeb_api.Controllers
 
             if (ModelState.IsValid && cidade != null)
             {               
-                IRepositorio<Cidade> cidadeRepositorio = new CidadeRepositorio();
+               
                 cidadeRepositorio.Inserir(new Cidade()
                 {
                     Nome = cidade.Nome,
@@ -58,7 +58,7 @@ namespace DreamLifeWeb_api.Controllers
         {
             if (ModelState.IsValid && cidade != null)
             {
-                IRepositorio<Cidade> cidadeRepositorio = new CidadeRepositorio();
+                
                 Cidade cidadeUpdate = cidadeRepositorio.SelecionarPorId(cidade.Id);
                 cidadeUpdate.Nome = cidade.Nome;
                 cidadeUpdate.Pais = cidade.Pais;
@@ -80,7 +80,7 @@ namespace DreamLifeWeb_api.Controllers
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
             else
             {
-                IRepositorio<Cidade> cidadeRepositorio = new CidadeRepositorio();
+                
                 Cidade cidade = new Cidade();
                 cidade = cidadeRepositorio.SelecionarPorId(id);
                 cidadeRepositorio.Excluir(cidade);
