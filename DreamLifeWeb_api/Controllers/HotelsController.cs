@@ -53,5 +53,45 @@ namespace DreamLifeWeb_api.Controllers
             }
         }
 
+        //PUT: trips/Hotels 
+        [HttpPut]
+        [ActionName("Hotels")]
+        public HttpResponseMessage PutCidade(Hotel hotel)
+        {
+            IRepositorio<Cidade> repositorioCidade = new CidadeRepositorio();
+            Cidade cidade = repositorioCidade.SelecionarPorId(hotel.CidadeId);
+            if (ModelState.IsValid && hotel != null)
+            {
+                Hotel hotelUpdate = hotelRepositorio.SelecionarPorId(hotel.Id);
+                hotelUpdate.Nome = hotel.Nome;
+                hotelUpdate.Preco = hotel.Preco;
+                hotelUpdate.Descricao = hotel.Descricao;
+                hotelUpdate.CidadeId = hotel.CidadeId;
+                hotelUpdate.Cidade = cidade;                
+                hotelRepositorio.Atualizar(hotelUpdate);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+        }
+
+        [HttpDelete]
+        //DELETE: trips/Hotels/id
+        public HttpResponseMessage Delete(int id)
+        {
+            if (id <= 0)
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            else
+            {
+
+                Hotel hotel = new Hotel();
+                hotel = hotelRepositorio.SelecionarPorId(id);
+               hotelRepositorio.Excluir(hotel);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+        }
+
     }
 }
