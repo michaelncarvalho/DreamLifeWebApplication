@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace DreamLifeWeb_api
+namespace DreamLifeWebApi
 {
     public class RouteConfig
     {

@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using DreamLifeWeb_api.Areas.HelpPage.ModelDescriptions;
-using DreamLifeWeb_api.Areas.HelpPage.Models;
+using DreamLifeWebApi.Areas.HelpPage.ModelDescriptions;
+using DreamLifeWebApi.Areas.HelpPage.Models;
 
-namespace DreamLifeWeb_api.Areas.HelpPage
+namespace DreamLifeWebApi.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

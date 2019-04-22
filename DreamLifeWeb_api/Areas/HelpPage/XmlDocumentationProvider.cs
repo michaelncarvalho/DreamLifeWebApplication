@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using DreamLifeWeb_api.Areas.HelpPage.ModelDescriptions;
+using DreamLifeWebApi.Areas.HelpPage.ModelDescriptions;
 
-namespace DreamLifeWeb_api.Areas.HelpPage
+namespace DreamLifeWebApi.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

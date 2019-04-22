@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace DreamLifeWeb_api.Areas.HelpPage.ModelDescriptions
+namespace DreamLifeWebApi.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterDescription
     {

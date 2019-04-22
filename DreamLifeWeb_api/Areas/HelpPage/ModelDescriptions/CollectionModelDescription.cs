@@ -1,4 +1,4 @@
-namespace DreamLifeWeb_api.Areas.HelpPage.ModelDescriptions
+namespace DreamLifeWebApi.Areas.HelpPage.ModelDescriptions
 {
     public class CollectionModelDescription : ModelDescription
     {

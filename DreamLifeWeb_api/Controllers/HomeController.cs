@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace DreamLifeWeb_api.Controllers
+namespace DreamLifeWebApi.Controllers
 {
     public class HomeController : Controller
     {

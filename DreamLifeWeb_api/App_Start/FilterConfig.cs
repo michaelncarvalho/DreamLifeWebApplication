@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace DreamLifeWeb_api
+namespace DreamLifeWebApi
 {
     public class FilterConfig
     {

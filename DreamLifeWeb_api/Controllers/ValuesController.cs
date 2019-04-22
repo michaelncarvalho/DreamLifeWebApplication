@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace DreamLifeWeb_api.Controllers
+namespace DreamLifeWebApi.Controllers
 {
     public class ValuesController : ApiController
     {

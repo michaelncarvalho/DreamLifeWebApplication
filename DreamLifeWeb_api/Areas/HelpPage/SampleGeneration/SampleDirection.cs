@@ -1,4 +1,4 @@
-namespace DreamLifeWeb_api.Areas.HelpPage
+namespace DreamLifeWebApi.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

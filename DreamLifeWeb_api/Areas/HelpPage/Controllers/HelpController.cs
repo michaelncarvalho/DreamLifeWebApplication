@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using DreamLifeWeb_api.Areas.HelpPage.ModelDescriptions;
-using DreamLifeWeb_api.Areas.HelpPage.Models;
+using DreamLifeWebApi.Areas.HelpPage.ModelDescriptions;
+using DreamLifeWebApi.Areas.HelpPage.Models;
 
-namespace DreamLifeWeb_api.Areas.HelpPage.Controllers
+namespace DreamLifeWebApi.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.
