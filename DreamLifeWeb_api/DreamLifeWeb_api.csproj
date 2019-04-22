@@ -190,6 +190,7 @@
     <Compile Include="Controllers\CidadesController.cs" />
     <Compile Include="Controllers\ContinentesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HotelsController.cs" />
     <Compile Include="Controllers\PaisesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
