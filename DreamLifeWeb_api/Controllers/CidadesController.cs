@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
-namespace DreamLifeWebApi.Controllers
+namespace DreamLifeWeb_api.Controllers
 {
     public class CidadesController : ApiController
     {

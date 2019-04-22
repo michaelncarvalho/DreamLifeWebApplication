@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace DreamLifeWebApi.Areas.HelpPage
+namespace DreamLifeWeb_api.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

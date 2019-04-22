@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace DreamLifeWebApi.Areas.HelpPage.ModelDescriptions
+namespace DreamLifeWeb_api.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

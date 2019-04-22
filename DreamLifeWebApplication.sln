@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamLifeWebApplication.Per
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamLifeWebApplication.Repositorio", "DreamLifeWebApplication.Repositorio\DreamLifeWebApplication.Repositorio.csproj", "{B4B4FE05-B993-4831-A1E0-3DE2D4784F0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamLifeWebApi", "DreamLifeWeb_api\DreamLifeWebApi.csproj", "{AD6DD4E8-00F8-4772-B5C0-64A68230EFCD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DreamLifeWeb_api", "DreamLifeWeb_api\DreamLifeWeb_api.csproj", "{AD6DD4E8-00F8-4772-B5C0-64A68230EFCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

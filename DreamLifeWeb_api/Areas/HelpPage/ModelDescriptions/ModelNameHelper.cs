@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace DreamLifeWebApi.Areas.HelpPage.ModelDescriptions
+namespace DreamLifeWeb_api.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

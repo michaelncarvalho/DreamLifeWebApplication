@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace DreamLifeWebApi
+namespace DreamLifeWeb_api
 {
     public static class WebApiConfig
     {

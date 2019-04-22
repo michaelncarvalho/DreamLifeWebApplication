@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace DreamLifeWebApi
+namespace DreamLifeWeb_api
 {
     public class BundleConfig
     {

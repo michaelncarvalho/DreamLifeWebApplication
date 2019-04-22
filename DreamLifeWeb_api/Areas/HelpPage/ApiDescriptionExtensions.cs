@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace DreamLifeWebApi.Areas.HelpPage
+namespace DreamLifeWeb_api.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {
