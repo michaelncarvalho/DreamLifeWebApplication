@@ -195,10 +195,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BalancoComercialPorContinente.cs" />
-    <Compile Include="Models\BalancoComercialPorPais.cs" />
-    <Compile Include="Models\SimulacaoBalanco2012.cs" />
-    <Compile Include="Models\SimulacaoBalanco2013.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -254,6 +250,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
