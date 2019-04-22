@@ -16,32 +16,40 @@ namespace DreamLifeWebApplication.Controllers
     public class TripsController : Controller
     {
         // GET: Trips
-        public ActionResult City(string GetTripsByCity)
+        public JsonResult City(string GetTripsByCity)
         {
 
             //Reading from the json file 
             var webClient = new WebClient();
             string fileName = Server.MapPath("~/App_Data/trips.json");
-            var json = webClient.DownloadString(fileName);     
+
+            var json = webClient.DownloadString(fileName);
             IList<TripData> tripsData = JsonConvert.DeserializeObject<IList<TripData>>(json);
 
             TripsCollection tripsCollection = new TripsCollection(tripsData);
-            
+
             //Calling the FilterResult function to filter trips by CityID and DateTime
             TripsCollection tripsCollectionFiltered = FilterResult(tripsCollection, GetTripsByCity);
 
-            return View(tripsCollectionFiltered);
+            var result = new JsonResult();
+            result.Data = new
+            {
+                id = 1
+            };
+            result.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+            return result;
+            //return View(tripsCollectionFiltered);
         }
 
-       
-        
+
+
         //Filtering JSON results by CityID and DateTime (date later than today's date)
         public TripsCollection FilterResult(TripsCollection tripsData, string GetTripsByCity)
         {
 
             TripsCollection tripsCollectionFiltered = new TripsCollection();
 
-         
+
 
             foreach (TripData trip in tripsData.tripsCollection)
             {
@@ -53,10 +61,10 @@ namespace DreamLifeWebApplication.Controllers
                     {
                         tripsCollectionFiltered.tripsCollection.Add(trip);
                     }
-               
+
                 }
 
-                
+
             }
 
             return tripsCollectionFiltered;

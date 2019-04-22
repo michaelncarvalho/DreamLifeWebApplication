@@ -26,6 +26,11 @@ namespace DreamLifeWebApplication.Controllers
         {
             return View();
         }
-        
+
+        public ActionResult Teste()
+        {
+            return View();
+        }
+
     }
 }
