@@ -51,6 +51,9 @@ namespace DreamLifeWeb_api.Controllers
             }
         }
 
+        //PUT: trips/Cidades 
+        [HttpPut]
+        [ActionName("Cidades")]
         public HttpResponseMessage PutCidade(Cidade cidade)
         {
             if (ModelState.IsValid && cidade != null)
@@ -68,6 +71,23 @@ namespace DreamLifeWeb_api.Controllers
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
         }
+
+        [HttpDelete]
+        //DELETE: trips/Cidades/id
+        public HttpResponseMessage Delete(int id)
+        {
+            if (id <= 0 )
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            else
+            {
+                IRepositorio<Cidade> cidadeRepositorio = new CidadeRepositorio();
+                Cidade cidade = new Cidade();
+                cidade = cidadeRepositorio.SelecionarPorId(id);
+                cidadeRepositorio.Excluir(cidade);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+        }
+
     }
 }
 
