@@ -50,6 +50,24 @@ namespace DreamLifeWeb_api.Controllers
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
         }
+
+        public HttpResponseMessage PutCidade(Cidade cidade)
+        {
+            if (ModelState.IsValid && cidade != null)
+            {
+                IRepositorio<Cidade> cidadeRepositorio = new CidadeRepositorio();
+                Cidade cidadeUpdate = cidadeRepositorio.SelecionarPorId(cidade.Id);
+                cidadeUpdate.Nome = cidade.Nome;
+                cidadeUpdate.Pais = cidade.Pais;
+                cidadeRepositorio.Atualizar(cidadeUpdate);
+
+
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }else
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+            }
+        }
     }
 }
 
