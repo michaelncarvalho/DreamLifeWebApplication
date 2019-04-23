@@ -1,1 +1,81 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face{
+    font-family: Microsoft-yahei;
+    src: url(assets/fonts/microsoft-yahei.ttf) format("opentype");
+}
+html, body{
+    margin: 0;
+
+    padding: 0;
+
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+ .header {
+    height: 28.63%;
+    background-color: #2FAEFE;
+    min-height: 15px;
+    max-height: inherit;
+    position: fixed;
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center; 
+    
+
+ }
+ 
+.card {      
+     top: 75%;
+     width: 80%;
+     height: 50%;
+     position: absolute; 
+     border-radius: 40px 40px 40px 40px;
+     min-height: fit-content;
+      
+                   
+ }
+
+ .header .card .itens-menu{     
+      position: relative;
+      top: 25%;
+      text-align: center;
+      min-height: fit-content;
+     
+ }
+
+
+  #page-content{
+    height: 68.58%;
+    background-color: #F2F2F2;
+    min-height: fill-available;
+    max-height: inherit; 
+  }
+
+  #footer{
+    height: 2.78%;    
+    background-color: #8AD2FF;
+    position: fixed;
+  }
+
+  .fixed-bottom::before{
+    content: "\200B";
+  }
+
+  .title{
+      color: #FFFFFF;
+      font-family: 'Microsoft-yahei';
+      text-shadow: 9px 6px 9px #000000; 
+  }
