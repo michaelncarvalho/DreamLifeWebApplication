@@ -12,25 +12,28 @@
 <!-- Header -->
 
 <body>
-  <div>    
-    <div class = "header" >
-        <h1 class="title font-weight-light text-white text-center">my trips</h1>
-        <div class="card" >          
-          <menu-trips class = "itens-menu"></menu-trips>         
-        </div>
-    </div>   
-
-
-    <!-- Page Content -->
-    <div id="page-content">
-        trips information
+  <div class = "main">
+    <div class="header">
+      <h1 class="title font-weight-light text-white text-center">my trips</h1>
+      <div class="card">
+        <menu-trips class="itens-menu"></menu-trips>
+      </div>
     </div>
 
 
-<!-- Footer -->
-        <footer class="fixed-bottom" id = "footer">        
-        </footer>
-</div>
+    <!-- Page Content -->
+    <div class="page-content">
+      <div class="itens-trips">
+        <app-root></app-root>
+      </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="fixed-bottom" id="footer">
+
+    </footer>
+  </div>
 </body>
 
 </html>

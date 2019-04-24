@@ -57,13 +57,11 @@ namespace DreamLifeWeb_api.Controllers
         public HttpResponseMessage PutCidade(Cidade cidade)
         {
             if (ModelState.IsValid && cidade != null)
-            {
-                
+            {                
                 Cidade cidadeUpdate = cidadeRepositorio.SelecionarPorId(cidade.Id);
                 cidadeUpdate.Nome = cidade.Nome;
                 cidadeUpdate.Pais = cidade.Pais;
                 cidadeRepositorio.Atualizar(cidadeUpdate);
-
 
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }else
@@ -74,7 +72,7 @@ namespace DreamLifeWeb_api.Controllers
 
         [HttpDelete]
         //DELETE: trips/Cidades/id
-        public HttpResponseMessage Delete(int id)
+        public HttpResponseMessage DeleteCidade(int id)
         {
             if (id <= 0 )
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);

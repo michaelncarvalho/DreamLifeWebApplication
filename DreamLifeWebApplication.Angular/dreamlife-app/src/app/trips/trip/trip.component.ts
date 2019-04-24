@@ -1,12 +1,18 @@
-import {Component, Input} from "@angular/core";
+import { Component, Input } from "@angular/core";
 
-@Component ({
+@Component({
     selector: 'ap-trip',
     templateUrl: 'trip.component.html'
 })
-
 export class TripComponent {
-    @Input() description='';
     
-    @Input() url='';
+    @Input() Id = '';
+
+    @Input() HotelId='';
+    
+    @Input() Data='';
+
+    @Input() ModalidadeViagem='';
+
+    @Input() QuantidadePessoas='';
 }
