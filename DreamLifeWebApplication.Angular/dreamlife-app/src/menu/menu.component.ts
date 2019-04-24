@@ -7,11 +7,11 @@ import { Component } from "@angular/core";
   })
   
   export class MenuComponent {
-    private PlaceHolderIcon = require("./img/placeholder.svg");
-    private CalendarIcon = require("./img/calendar-page-empty.svg");
-    private ManUserIcon = require("./img/man-user.svg");
-    private CrownIcon = require("./img/crown.svg");
-    private CreditCardIcon = require("./img/credit-card.svg");
+    public PlaceHolderIcon = require("./img/placeholder.svg");
+    public CalendarIcon = require("./img/calendar-page-empty.svg");
+    public ManUserIcon = require("./img/man-user.svg");
+    public CrownIcon = require("./img/crown.svg");
+    public CreditCardIcon = require("./img/credit-card.svg");
   }
 
   

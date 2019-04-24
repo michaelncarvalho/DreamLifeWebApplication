@@ -11,6 +11,9 @@ namespace DreamLifeWeb_api
         {
             // Web API configuration and services
 
+            //Enable Cors
+            //config.EnableCors();
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 
