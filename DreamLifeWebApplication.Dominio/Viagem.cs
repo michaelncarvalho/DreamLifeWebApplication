@@ -9,10 +9,10 @@ namespace DreamLifeWebApplication.Dominio
 {
     [Table("viagem")]
     public class Viagem
-    {
+    {        
         [Column("id")]
-        public int Id { get; set; }
-        [Column("id_hotel")]
+        public int Id { get; set; }        
+        [Column("id_hotel")]        
         public int HotelId { get; set; }
         [Column("data_viagem")]
         public DateTime Data { get; set; }

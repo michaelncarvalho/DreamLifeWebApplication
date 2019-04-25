@@ -2,14 +2,16 @@
 using DreamLifeWebApplication.Persistencia.EF;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DreamLifeWebApplication.Repositorio
 {
-    public class ViagemRepositorio : IRepositorio<Viagem>
-    {
+    public class ViagemRepositorio : IRepositorio<Viagem>    {
+       
+
         public void Atualizar(Viagem entidade)
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
@@ -57,7 +59,8 @@ namespace DreamLifeWebApplication.Repositorio
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
-                return contexto.Viagens.ToList();
+                
+                return contexto.Viagens.Include("Hotel").ToList();
             }
         }
     }

@@ -1,7 +1,10 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @font-face{
     font-family: Microsoft-yahei;
     src: url(assets/fonts/microsoft-yahei.ttf) format("opentype");
-}
+    }
+
+    
 html, body{
     margin: 0;
     padding: 0;

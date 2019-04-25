@@ -20,6 +20,7 @@ namespace DreamLifeWebApplication.Persistencia.EF
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.Configuration.LazyLoadingEnabled = false;
             //modelBuilder.HasDefaultSchema("mytrips").Entity<Cidade>().HasKey(c => c.Id);
 
             //modelBuilder.Entity<Hotel>().HasRequired(c => c.Cidade);
