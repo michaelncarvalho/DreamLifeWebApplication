@@ -49,7 +49,7 @@ html, body{
     display: flex;
     width: 100%;
     justify-content: center;
-    align-items: center;    
+    align-items: center;   
 
  }
  
@@ -60,7 +60,7 @@ html, body{
      position: absolute; 
      border-radius: 40px 40px 40px 40px;
      min-height: fit-content;
-      
+     box-shadow: 1px 5px 3px gray;     
                    
  }
 
@@ -75,9 +75,10 @@ html, body{
 .page-content{
     height: 68.58%;
     background-color: #F2F2F2;
+    min-height: stretch;
   }
 
-  .page-content .itens-trips{    
+  .page-content{    
      padding-top: 15%;
      padding-left: 10%;   
   }
@@ -96,5 +97,12 @@ html, body{
   .title{
       color: #FFFFFF;
       font-family: 'Microsoft-yahei';
-      text-shadow: 9px 6px 9px #000000; 
+      text-shadow: 9px 6px 9px #000000;
+      align-content: center; 
+  }
+
+  .header .edit-icon{
+    padding: 50px;
+    margin: 50px;
+
   }

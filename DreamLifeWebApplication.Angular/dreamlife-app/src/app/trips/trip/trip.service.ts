@@ -10,6 +10,7 @@ export class TripService {
     private dateFilter: string = "2019-05-28T00:00:00";
     constructor(private http: HttpClient) { }
 
+    
     getTrips(){
         let params = new HttpParams().set('CidadeId', '1');
         return this.http

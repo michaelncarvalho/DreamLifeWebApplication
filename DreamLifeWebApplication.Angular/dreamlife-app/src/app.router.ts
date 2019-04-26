@@ -10,8 +10,9 @@ const routes: Routes = [
     },
     //Descrição Hotel
     {
-        path: 'descricao-hotel',
+        path: 'descricao',
         component: DescricaoHotelComponent
     }   
 ];
+
 export const RoutingModule = RouterModule.forRoot(routes);

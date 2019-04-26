@@ -11,10 +11,7 @@ import { AppMaterialModule } from './app-material/app-material.module';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
-  
-  @Input() value = 5;
-  trips: Trip[];
+export class AppComponent {  
 
   /*constructor(http: HttpClient) {
      http
@@ -23,14 +20,7 @@ export class AppComponent {
      //.subscribe(trips => console.log(trips));
   } */
 
-  constructor(private tripService: TripService, public dialog: MatMenuModule) {  }
+  constructor(public dialog: AppMaterialModule) {  }
   
-  ngOnInit() {
-    this.tripService
-      .getTrips()
-      .subscribe(trips => {        
-        this.trips = trips
-        console.log(this.trips)
-      });
-  }  
+
 }
