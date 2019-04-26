@@ -21,6 +21,7 @@ namespace DreamLifeWeb_api.Controllers
             return cidadeRepositorio.SelecionarTodos();
         }
 
+
         //GET: trips/Cidades/id
         [HttpGet]
         public Cidade Get(int id)

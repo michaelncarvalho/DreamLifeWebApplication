@@ -4,7 +4,8 @@ import { TripComponent } from "./trip/trip.component";
 
 @NgModule({
     declarations: [ TripComponent ],
-    exports: [ TripComponent ]
+    exports: [ TripComponent ],
+    imports: [] , 
 })
 
 export class TripsModule { }

@@ -17,9 +17,19 @@ namespace DreamLifeWeb_api.Controllers
 
         //GET: trips/Viagens
         [HttpGet]
-        public List<Viagem> Get()
+        public IEnumerable<Viagem> Get()
         {
-            return viagemRepositorio.SelecionarTodos();
+            IEnumerable<KeyValuePair<string,string>> keyValuePair = Request.GetQueryNameValuePairs();        
+
+           
+            if (keyValuePair.Count() == 0)
+            {
+                return viagemRepositorio.SelecionarTodos();
+            }else
+            {
+                ViagemRepositorio viagemRepositorio = new ViagemRepositorio();
+                return viagemRepositorio.SelecionarPorQuery(keyValuePair.First());
+            }            
         }
 
         //GET: trips/Viagens/id
@@ -29,6 +39,14 @@ namespace DreamLifeWeb_api.Controllers
             return viagemRepositorio.SelecionarPorId(id);
         }
 
+        /*//GET: trips/Viagens?data={data}
+        [HttpGet]
+        public List<Viagem> Get(DateTime data)
+        {
+            ViagemRepositorio viagemRepositorio = new ViagemRepositorio();
+            return viagemRepositorio.SelecionarTodosPorData(data);
+        } */
+
         //POST: trips/Viagens 
         [HttpPost]
         [ActionName("Viagens")]
@@ -37,7 +55,7 @@ namespace DreamLifeWeb_api.Controllers
 
             if (ModelState.IsValid && viagem != null)
             {
-                IRepositorio<Hotel> repositorioCidade = new HotelRepositorio();
+                /*IRepositorio<Hotel> repositorioCidade = new HotelRepositorio();
                 Hotel hotel = repositorioCidade.SelecionarPorId(viagem.HotelId);
                 viagemRepositorio.Inserir(new Viagem()
                 {
@@ -46,7 +64,8 @@ namespace DreamLifeWeb_api.Controllers
                    QuantidadePessoas = viagem.QuantidadePessoas,
                    ModalidadeViagem = viagem.ModalidadeViagem,
                    Hotel = hotel
-                });
+                }); */
+                viagemRepositorio.Inserir(viagem);
                 return new HttpResponseMessage(HttpStatusCode.Created);
             }
             else
@@ -60,16 +79,16 @@ namespace DreamLifeWeb_api.Controllers
         [ActionName("Viagens")]
         public HttpResponseMessage PutCidade(Viagem viagem)
         {
-            IRepositorio<Hotel> repositorioCidade = new HotelRepositorio();
-            Hotel hotel = repositorioCidade.SelecionarPorId(viagem.HotelId);
+            //IRepositorio<Hotel> repositorioCidade = new HotelRepositorio();
+            //Hotel hotel = repositorioCidade.SelecionarPorId(viagem.HotelId);
             if (ModelState.IsValid && viagem != null)
             {
                 Viagem viagemUpdate = viagemRepositorio.SelecionarPorId(viagem.Id);
-                viagemUpdate.HotelId = viagem.HotelId;
-                viagemUpdate.Hotel = hotel;
-                viagemUpdate.ModalidadeViagem = viagem.ModalidadeViagem;
-                viagemUpdate.QuantidadePessoas = viagem.QuantidadePessoas;
-                viagemRepositorio.Atualizar(viagemUpdate);
+                //viagemUpdate.HotelId = viagem.HotelId;
+               // viagemUpdate.Hotel = hotel;
+               // viagemUpdate.ModalidadeViagem = viagem.ModalidadeViagem;
+               // viagemUpdate.QuantidadePessoas = viagem.QuantidadePessoas;
+                viagemRepositorio.Atualizar(viagem);
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
             else

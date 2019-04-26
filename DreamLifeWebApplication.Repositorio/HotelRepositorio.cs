@@ -33,6 +33,19 @@ namespace DreamLifeWebApplication.Repositorio
                 contexto.SaveChanges();
             }
         }
+
+        public IEnumerable<Hotel> SelecionarPorQuery(KeyValuePair<string, string> keyValuePair)
+        {
+            using (ApplicationDbContext contexto = new ApplicationDbContext())
+
+            {
+                int cidadeId = Convert.ToInt32(keyValuePair.Value);
+                return contexto.Hoteis
+                    .Include("Cidade")
+                    .Where(v => keyValuePair.Key == "CidadeId" && cidadeId == v.CidadeId)
+                    .ToList();
+            }
+        }
         public void Excluir(Hotel entidade)
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
@@ -48,7 +61,9 @@ namespace DreamLifeWebApplication.Repositorio
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
-                return contexto.Hoteis.Find(id)
+                var result = contexto.Hoteis.Find(id);
+                contexto.Entry(result).Reference("Cidade").Load();
+                return result;
 ;
             }
         }
@@ -57,8 +72,10 @@ namespace DreamLifeWebApplication.Repositorio
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
-                return contexto.Hoteis.ToList();
+                return contexto.Hoteis.Include("Cidade").ToList();
             }
-        }
+        }        
+
+       
     }
 }

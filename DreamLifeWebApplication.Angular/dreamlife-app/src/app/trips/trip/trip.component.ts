@@ -1,18 +1,22 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input} from "@angular/core";
+import { Trip } from "./trip";
+import { BehaviorSubject } from "rxjs";
 
 @Component({
     selector: 'ap-trip',
     templateUrl: 'trip.component.html'
 })
-export class TripComponent {
+
+export class TripComponent {   
     
-    @Input() Id = '';
+      
+    @Input() 
+    listaHoteis: Trip[];
 
-    @Input() HotelId='';
+    constructor() {   }
+
+   
     
-    @Input() Data='';
-
-    @Input() ModalidadeViagem='';
-
-    @Input() QuantidadePessoas='';
 }
+
+

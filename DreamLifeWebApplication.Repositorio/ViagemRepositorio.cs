@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace DreamLifeWebApplication.Repositorio
 {
-    public class ViagemRepositorio : IRepositorio<Viagem>    {
-       
+    public class ViagemRepositorio : IRepositorio<Viagem>
+    {
+
 
         public void Atualizar(Viagem entidade)
         {
@@ -50,8 +51,38 @@ namespace DreamLifeWebApplication.Repositorio
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
-                return contexto.Viagens.Find(id)
-;
+
+                var result = contexto.Viagens.Find(id);
+                contexto.Entry(result).Reference("Hotel").Load();
+                return result;                
+            }
+        }
+
+        /*public List<Viagem> SelecionarTodosPorData(DateTime data)
+        {
+            using (ApplicationDbContext contexto = new ApplicationDbContext())
+            {
+                return contexto.Viagens.Include("Hotel").Where(v => v.Data == data ).ToList();
+            }
+        }*/
+
+        public IEnumerable<Viagem> SelecionarPorQuery(KeyValuePair<string, string> keyValuePair)
+        {
+            using (ApplicationDbContext contexto = new ApplicationDbContext())
+
+            {
+                int cidadeId = Convert.ToInt32(keyValuePair.Value);
+                return contexto.Viagens.Include("Hotel")
+                    .Where(v => keyValuePair.Key == "Hotel.CidadeId" && cidadeId == v.Hotel.CidadeId)
+                    .ToList();
+
+
+                /*return contexto.Viagens.Include("Hotel")
+                    .Where(h => keyValuePair.Key == "data" && data == h.Data)
+                    .GroupBy(v => v.HotelId)
+                    .Select( x => new { }  ).ToList(); 
+                //int value = Convert.ToInt32(keyValuePair.Value);
+                //return contexto.Viagens.Include("Hotel").Where(h => keyValuePair.Key == "HotelId" && value == h.HotelId).Distinct().ToList(); */
             }
         }
 
@@ -59,7 +90,6 @@ namespace DreamLifeWebApplication.Repositorio
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
-                
                 return contexto.Viagens.Include("Hotel").ToList();
             }
         }

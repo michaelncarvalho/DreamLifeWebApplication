@@ -1,8 +1,7 @@
 <div>
-  <ul>
-    <li *ngFor="let trip of trips; let i = index">
-      {{i}} {{trip.Id}} {{ trip.QuantidadePessoas}}
-    </li> 
-  </ul>
+    <ul>
+      <li *ngFor="let trip of trips">
+         {{trip.Nome}}, {{trip.Localizacao}}
+      </li> 
+    </ul>
 </div>
-

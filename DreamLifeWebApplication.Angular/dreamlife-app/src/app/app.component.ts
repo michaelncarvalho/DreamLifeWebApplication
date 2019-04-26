@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { TripService } from './trips/trip/trip.service';
-import {MatDialog} from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { Trip } from './trips/trip/trip';
+import { MatMenuModule } from '@angular/material/menu';
+import { AppMaterialModule } from './app-material/app-material.module';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  trips: Trip[] = [];
+  
+  @Input() value = 5;
+  trips: Trip[];
 
   /*constructor(http: HttpClient) {
      http
@@ -18,22 +23,14 @@ export class AppComponent {
      //.subscribe(trips => console.log(trips));
   } */
 
-  constructor(tripService: TripService, public dialog: MatDialog){
-    tripService
-    .getTrips()
-    .subscribe(trips => { 
-      console.log(trips)
-      this.trips = trips
-    });    
-  }
-
-  openDialog() {
-    const dialogRef = this.dialog.open(AppComponent, {
-      height: '350px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+  constructor(private tripService: TripService, public dialog: MatMenuModule) {  }
+  
+  ngOnInit() {
+    this.tripService
+      .getTrips()
+      .subscribe(trips => {        
+        this.trips = trips
+        console.log(this.trips)
+      });
+  }  
 }

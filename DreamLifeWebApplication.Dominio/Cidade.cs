@@ -17,6 +17,6 @@ namespace DreamLifeWebApplication.Dominio
         [Column("pais")]
         public string Pais { get; set; }
        
-        public List<Hotel> Hotels { get; set; }
+        //public List<Hotel> Hotels { get; set; }
     }
 }

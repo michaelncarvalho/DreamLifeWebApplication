@@ -1,7 +1,10 @@
 export interface Trip {
     Id:number;
-    Data:Date;
-    HotelId:number;
-    ModalidadeViagem:string;
-    QuantidadePessoas: number;  
+    Nome:string;
+    Localizacao: string;
+    Descricao: string;
+    Preco:number;
+    CidadeId: number;
+    CidadeNome: string;
+    Pais: string;  
 }

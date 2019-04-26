@@ -14,10 +14,21 @@ namespace DreamLifeWeb_api.Controllers
         private IRepositorio<Hotel> hotelRepositorio = new HotelRepositorio();
         //GET: trips/Hotels
         [HttpGet]
-        public List<Hotel> Get()
+        public IEnumerable<Hotel> Get()
         {
-            return hotelRepositorio.SelecionarTodos();
+            IEnumerable<KeyValuePair<string, string>> keyValuePair = Request.GetQueryNameValuePairs();
+
+            if (keyValuePair.Count() == 0)
+            {
+                return hotelRepositorio.SelecionarTodos();
+            }
+            else
+            {
+                HotelRepositorio hotelRepositorio = new HotelRepositorio();
+                return hotelRepositorio.SelecionarPorQuery(keyValuePair.First());
+            }
         }
+
 
         //GET: trips/Hotels/id
         [HttpGet]
@@ -25,6 +36,7 @@ namespace DreamLifeWeb_api.Controllers
         {
             return hotelRepositorio.SelecionarPorId(id);
         }
+       
 
         //POST: trips/Hotels  
         [HttpPost]
