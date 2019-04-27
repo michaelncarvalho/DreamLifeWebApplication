@@ -12,10 +12,23 @@ namespace DreamLifeWebApplication
     {
         protected void Application_Start()
         {
+           /* using(var context = new ApplicationDbContext())
+            {
+                context.Cidade.Add(new Cidade
+                {
+                    Nome = "Sete Lagoas",
+                    Pais = "Brasil",
+                    Estado = "MG",
+                });
+                context.SaveChanges();
+            } */
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            
+
         }
     }
 }

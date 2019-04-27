@@ -1,0 +1,12 @@
+ 
+ .card-itens{  
+  flex-direction: row;
+   border-radius: 40px 40px 40px 40px;
+   background-color: white;
+   width:  830.1px;
+   height: 208.14px;
+   margin: 25px;
+   padding: 25px;
+   box-shadow: 1px 5px 3px gray;
+}
+
