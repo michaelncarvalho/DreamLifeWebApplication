@@ -20,7 +20,7 @@ export class AppComponent {
      //.subscribe(trips => console.log(trips));
   } */
 
-  constructor(public dialog: AppMaterialModule) {  }
+  constructor(public dialog: AppMaterialModule) { 
+   }
   
-
 }

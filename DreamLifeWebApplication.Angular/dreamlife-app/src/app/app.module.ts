@@ -7,20 +7,23 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import { AppMaterialModule } from './app-material/app-material.module';
-import { DescricaoHotelComponent } from './descricao-hotel/descricao-hotel.component';
 import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 import { RoutingModule } from 'src/app.router';
 import { AppComponent } from './app.component';
 import { TripsModule } from './trips/trips.module';
 import { ModalDescricaoComponent } from './modal-descricao/modal-descricao.component';
 import { ModalDescricaoModule } from './modal-descricao/modal-descricao.module';
+import { CadastroCidadeComponent } from './cadastro-cidade/cadastro-cidade.component';
+import { CadastroHotelComponent } from './cadastro-hotel/cadastro-hotel.component';
+import { VisualizarPaginaComponent } from './visualizar-pagina/visualizar-pagina.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DescricaoHotelComponent,
     DropdownMenuComponent,
-    DescricaoHotelComponent
+    CadastroCidadeComponent,
+    CadastroHotelComponent,
+    VisualizarPaginaComponent
   ],
   entryComponents: [ModalDescricaoComponent],
   imports: [
@@ -32,9 +35,11 @@ import { ModalDescricaoModule } from './modal-descricao/modal-descricao.module';
     RoutingModule,
     ModalDescricaoModule
   ],
-  
+  exports: [
+    AppComponent
+  ],  
   providers: [],
-  bootstrap: [AppComponent, DropdownMenuComponent]
+  bootstrap: [AppComponent]
 })
 
 export class AppModule { }

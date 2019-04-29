@@ -1,30 +1,40 @@
-import { Component, Input} from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Trip } from "./trip";
-import { BehaviorSubject } from "rxjs";
 import { TripService } from "./trip.service";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+
 
 @Component({
-    selector: 'ap-trip',
-    templateUrl: 'trip.component.html',
-    styleUrls: ['./trip.component.css']
+  selector: 'ap-trip',
+  templateUrl: 'trip.component.html',
+  styleUrls: ['./trip.component.css']
 })
 
-export class TripComponent {   
-    
-      
-    @Input() trips: Trip[];
+export class TripComponent {
 
-    constructor(private tripService: TripService) {   }
+  @Input() trips: Trip[];
+  @Input() hotelIdModel: number;
 
-    ngOnInit() {
-        this.tripService
+
+  constructor(private tripService: TripService, private modalService: NgbModal) { }
+
+
+  ngOnInit() {
+    this.tripService
       .getTrips()
-      .subscribe(trips => {        
+      .subscribe(trips => {
         this.trips = trips
         console.log(this.trips)
       });
-     }
-    
+  }
+  openVerticallyCentered(content) {
+    this.modalService.open(content, { 
+      size: 'lg',
+      centered: true,
+    });
+  }
+
 }
+
 
 

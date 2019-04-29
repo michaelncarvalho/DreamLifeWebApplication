@@ -8,5 +8,12 @@
    margin: 25px;
    padding: 25px;
    box-shadow: 1px 5px 3px gray;
+   align-content: center;
 }
 
+.itens-menu{     
+   position: relative;
+   top: 30%;
+   text-align: center;
+   min-height: fit-content;
+}

@@ -6,12 +6,17 @@ import { Component } from "@angular/core";
     styleUrls: ['./menu.component.css']
   })
   
-  export class MenuComponent {
+  export class MenuComponent{
     public PlaceHolderIcon = require("./img/placeholder.svg");
     public CalendarIcon = require("./img/calendar-page-empty.svg");
     public ManUserIcon = require("./img/man-user.svg");
     public CrownIcon = require("./img/crown.svg");
     public CreditCardIcon = require("./img/credit-card.svg");
+    public flag: boolean;
+
+    ngOnInit(){
+      this.flag  = true;
+    }
   }
 
   
