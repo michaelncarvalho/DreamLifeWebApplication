@@ -8,9 +8,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace DreamLifeWeb_api.Controllers
 {
+   [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CidadesController : ApiController
     {
         private IRepositorio<Cidade> cidadeRepositorio = new CidadeRepositorio();

@@ -6,9 +6,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace DreamLifeWeb_api.Controllers
 {
+    //[EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class HotelsController : ApiController
     {
         private IRepositorio<Hotel> hotelRepositorio = new HotelRepositorio();

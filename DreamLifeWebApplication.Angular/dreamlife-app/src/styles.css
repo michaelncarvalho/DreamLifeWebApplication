@@ -53,24 +53,17 @@ html, body{
 
  }
  
-.card {      
-     top: 75%;
-     width: 80%;
-     height: 50%;
-     position: absolute; 
-     border-radius: 40px 40px 40px 40px;
-     min-height: fit-content;
-     box-shadow: 1px 5px 3px gray;     
-                   
- }
-
- .header .card .itens-menu{     
-      position: relative;
-      top: 25%;
-      text-align: center;
-      min-height: fit-content;     
- }
-
+ .card {      
+  top: 25%;
+  width: 80%;
+  height: 10%;
+  align-self: center;
+  position: absolute;
+  margin: 0 auto; 
+  border-radius: 40px 40px 40px 40px;
+  min-height: fit-content;
+  box-shadow: 1px 5px 3px gray;
+}
 
 .page-content{
     height: 68.58%;
@@ -82,6 +75,12 @@ html, body{
      padding-top: 15%;
      padding-left: 10%;   
   }
+
+  a, .s-link {
+    color: #D58E10;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 
   #footer{
@@ -104,5 +103,4 @@ html, body{
   .header .edit-icon{
     padding: 50px;
     margin: 50px;
-
   }

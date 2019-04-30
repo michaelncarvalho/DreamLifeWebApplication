@@ -1,18 +1,32 @@
 import { Routes, RouterModule } from '@angular/router'
 import { TripComponent } from './app/trips/trip/trip.component';
-import { DescricaoHotelComponent } from './app/descricao-hotel/descricao-hotel.component';
+import { CadastroCidadeComponent } from './app/cadastro-cidade/cadastro-cidade.component';
+import { MenuComponent } from './menu/menu.component';
+import { CadastroHotelComponent } from './app/cadastro-hotel/cadastro-hotel.component';
+import { VisualizarPaginaComponent } from './app/visualizar-pagina/visualizar-pagina.component';
 
 const routes: Routes = [
     //localhost:4200
     {
         path: '',
-        component: TripComponent
+        component: TripComponent           
     },
-    //Descrição Hotel
+    //Cadastro cidade
     {
-        path: 'descricao',
-        component: DescricaoHotelComponent
-    }   
+        path: 'cadastro-cidade',
+        component: CadastroCidadeComponent
+    },
+    //Cadastro hotel
+    {
+        path: 'cadastro-hotel',
+        component: CadastroHotelComponent
+    },
+     //Visualizar pagina
+     {
+        path: 'visualizar-pagina',
+        component: VisualizarPaginaComponent
+    }
+
 ];
 
 export const RoutingModule = RouterModule.forRoot(routes);

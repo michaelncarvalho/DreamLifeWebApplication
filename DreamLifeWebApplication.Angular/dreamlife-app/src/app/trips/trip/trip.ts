@@ -5,6 +5,6 @@ export interface Trip {
     Descricao: string;
     Preco:number;
     CidadeId: number;
-    CidadeNome: string;
-    Pais: string;  
+    Cidade: any;
+    Classificacao: string;  
 }
