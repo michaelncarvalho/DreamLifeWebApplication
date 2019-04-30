@@ -1,3 +1,74 @@
-<div class = "card">
-    <h1 class = "title-page"> Cadastrar Hotel</h1>
+<div class="card">
+  <h1 class="title-page"> Cadastrar Hotel</h1>
 </div>
+
+<div *ngIf= "formConcluido" class = "cadastro-concluido-card">
+    <h2 class = "title-pop-up">Cadastro realizado com sucesso!</h2>
+</div>
+
+
+<div class="form-container">
+  <form>
+    <div class="row justify-content-center">
+      <mat-form-field>
+        <mat-label>Cadastrar em</mat-label>
+        <mat-select [(value)]=selectedValue>
+          <mat-option *ngFor="let cidade of cidades" [value]="cidade.Id">
+            {{cidade.Nome}}, {{cidade.Pais}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <input type="image" class="icon" name="add" [src]="PlaceHolderIcon">
+    </div>
+  </form>
+
+
+  <div  *ngIf= "selectedValue!= null" class = "form-container">
+    <form [formGroup]="myform" (ngSubmit)="onConcluir()" class="form-group" >
+        <div class="row ">
+        <input formControlName="Nome" type="text" class="form-input form-cadastro form-control" id="nomeHotel"
+          placeholder="Nome Hotel" >
+      </div>
+      <div class="row">
+        <input formControlName="Endereco" type="text" class="form-input form-cadastro form-control" id="endereco"
+          placeholder="Endereço" >
+      </div>
+      <div class="row ">
+        <input formControlName="Preco" type="number" class="form-input form-cadastro form-control" id="endereco"
+          placeholder="Preço diária" >
+        <fieldset>
+          <label for="classificacao" class="classificacao">Classificação: </label>
+          <ngb-rating [(rate)]="currentRate" (max)=5  formControlName= "Classificacao" >
+            <ng-template let-fill="fill" let-index="index">
+              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+            </ng-template>
+          </ngb-rating>
+        </fieldset>
+      </div>
+      <div class="row">
+        <fieldset>
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" formControlName="Descricao" ></textarea ><br><br>
+        </fieldset>
+      </div>
+     <!-- <div class="row">
+          <label>Upload Imagem: </label>
+          <input type="text" name = "imagem" class = "form-input form-cadastro form-control">  
+        <fieldset>            
+            <label for="uploadImagem" class="custom-file-upload"> 
+                <input type="file" class = "upload" name="imagem" accept="image/*" />Selecionar arquivo...
+              </label>            
+          </fieldset>
+      </div> -->
+      <div class ="row">
+        <div class = "col">
+            <button class="button">Concluir Cadastro</button>  
+        </div>
+        <div class = "col">
+            <a><img class ="deletar-icone" [src]= GarbageIcon /> Deletar </a>
+        </div>         
+      </div>      
+    </form>
+  </div>
+</div>
+

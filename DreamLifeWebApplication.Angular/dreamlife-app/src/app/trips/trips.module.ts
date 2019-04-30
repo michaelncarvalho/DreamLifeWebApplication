@@ -5,12 +5,13 @@ import { ModalDescricaoModule } from "../modal-descricao/modal-descricao.module"
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { TripComponent } from "./trip/trip.component";
 import { MenuComponent } from "src/menu/menu.component";
+import { MenuModule } from "src/menu/menu.module";
 
 
 @NgModule({
     declarations: [ TripComponent, MenuComponent],
     exports: [ TripComponent],
-    entryComponents: [TripComponent],
+    entryComponents: [TripComponent, MenuComponent],
     imports: [
         BrowserModule,
         HttpClientModule,

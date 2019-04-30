@@ -16,4 +16,5 @@ export class TripService {
         return this.http
         .get<Trip[]>(API + '/trips/Hotels', {params: params});        
     }
+
 }

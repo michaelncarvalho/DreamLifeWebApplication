@@ -1,26 +1,16 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient, HttpParams, HttpXsrfTokenExtractor } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+export interface Cidade {
+  Nome: string;
+  Id: number;
+  Pais: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+const API = 'http://localhost:50214/trips/';
 
 
 @Component({
@@ -28,11 +18,56 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './cadastro-cidade.component.html',
   styleUrls: ['./cadastro-cidade.component.css']
 })
+
 export class CadastroCidadeComponent {  
-  constructor() { 
-  }  
-  public AddIcon = require("./plus.svg"); 
   
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  @Input() cidades: Cidade[];
+
+  constructor(private http: HttpClient) {
+    
+  }
+  
+  ngOnInit() {
+    this.getCidades()
+      .subscribe(cidades => {
+        this.cidades = cidades
+        console.log(this.cidades)
+      });
+  }
+
+  getCidades(){
+    //let params = new HttpParams().set('CidadeId', '1');
+    return this.http
+    .get<Cidade[]>(API + 'Cidades');        
+}
+
+  onSubmit(myform : NgForm) {
+    console.log(myform.value);
+    this.http.post(API + 'Cidades', myform.value)
+    .subscribe(res => { 
+      console.log('sucess', res);
+      this.ngOnInit();
+    }, 
+    error => console.log('error', error)
+    );
+    myform.resetForm();
+  }
+
+  onRemove(cidadeId) {    
+    this.http.delete(API + 'Cidades/' + cidadeId).subscribe(res => {
+      console.log('success', res);
+      this.ngOnInit();
+    },
+    error => console.log('error', error)
+    );
+  }
+  onEdit(myForm: NgForm, cidadeNome, cidadePais) {
+    myForm.setValue({Nome: cidadeNome, Pais : cidadePais});
+  }
+
+  public AddIcon = require("./plus.svg"); 
+  public EditDataIcon = require("./pencil-striped-symbol-for-interface-edit-buttons.svg");
+  public RemoveIcon = require ("./garbage.svg"); 
+  headElements = ['Cidade', 'País', 'Ações'];
+
 }

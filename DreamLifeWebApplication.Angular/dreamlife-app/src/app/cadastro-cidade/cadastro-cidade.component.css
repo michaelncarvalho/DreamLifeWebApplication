@@ -38,11 +38,25 @@ input::-webkit-input-placeholder {
 }
 
 .icon{
-    height: 5%;
-    width:  5%;
+    height: 70px;
+    width:  70px;
     color: #1E6FA2;    
 }
 
 table {
     width: 100%;
   }
+
+.cadastrar-cidade-form {
+	color: #ffff;
+	padding:25px 25px 0;
+	margin: 20px 20px 0;	
+	border-radius: 3px;
+}
+
+register-item {
+	color: #ffff;
+	padding:25px 25px 0;
+	margin: 20px 20px 0;	
+	border-radius: 3px;
+}

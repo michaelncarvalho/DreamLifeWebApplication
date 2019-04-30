@@ -3,51 +3,42 @@
 </div>
 
 <div class = "form-container">
-        <form>
-                     
+        <form #myform="ngForm" (ngSubmit)="onSubmit(myform)" class="form-group">
                     <div class = "row justify-content-center">            
-                            <input type="email" class="form-cadastro form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Cidade">
+                            <input name="Nome" type="text" class="form-input form-cadastro form-control" id="exampleInputEmail1"
+                                 placeholder="Cidade" ngModel required>
                         
-                            <input type="email" class="form-cadastro form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="País">  
+                            <input name="Pais" type="text" class="form-input form-cadastro form-control" id="exampleInputEmail1"
+                                 placeholder="País" ngModel required>  
                             
                             <input type = "image" class = "icon" name = "add" [src] ="AddIcon">
-                    </div>
-                  
-                
+                    </div>    
         </form>
 </div>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div *ngIf = "cidades == null; else elseBlock"> <p class = "text-center">Nenhuma cidade cadastrada</p></div>
+<ng-template #elseBlock>
+    <table mdbTable >
+        <thead class="grey lighten-1 black-text">
+          <tr>
+            <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let cidade of cidades">
+            <td scope = "row">{{cidade.Nome}}</td>
+            <td>{{cidade.Pais}}</td>
+            <td> 
+              <a hfef="#" (click)= "onEdit(myform, cidade.Nome, cidade.Pais)"><img [src]=EditDataIcon alt="Editar Cidade" height="30" width="30"></a>  
+              <a hfef="#" (click) = "onRemove(cidade.Id)"><img [src]=RemoveIcon alt="Remover Cidade" height="30" width="30"></a> 
+            </td> 
+          </tr>
+        </tbody>
+      </table>
+</ng-template>
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+
+
+
+ 
+
