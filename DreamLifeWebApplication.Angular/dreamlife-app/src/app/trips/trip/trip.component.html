@@ -18,17 +18,31 @@
             <!-- MODAL TEMPLATE --------->
             <ng-template #content let-modal>
               <div class="modal-header">
-                <h4 class="modal-title">{{ trip.Nome }}</h4>
+                <h4 class="modal-title" >{{ trip.Nome }}</h4>
                 <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <p>{{trip.Descricao}}&hellip;</p>
-                <p>{{trip.Classificacao}}</p>
-                <p>{{trip.Cidade.Nome}}</p>
-                <p>{{trip.Cidade.Pais}}</p>
-                <h3> </h3>
+                <div class = "row"> 
+                    <div class = "col">
+                       <div class = "d-flex justify-content-center">
+                          <img class="card-image" src="http://lorempixel.com/640/480/city/?v={{trip.Id}}{{trip.Classificao}"
+                        alt="hotel photo">
+                       </div>
+                       <div class = "d-flex justify-content-center">                         
+                        <ngb-rating [rate]="trip.Classificacao" >
+                            <ng-template let-fill="fill" let-index="index">
+                              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                            </ng-template>
+                        </ngb-rating>   
+                      </div>
+                            
+                    </div>
+                    <div class = "col">
+                        <div class = "descricao-texto">{{trip.Descricao}}</div>
+                    </div>
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
@@ -38,31 +52,34 @@
 
             <mat-card class="example-card">
               <div class="row">
-                <div class="col">
-                  <img class="card-image" src="http://lorempixel.com/640/480/city/?v={{trip.Id}}"
+                <div class="col-6">
+                  <img class="card-image" src="http://lorempixel.com/640/480/city/?v={{trip.Id}}{{trip.Classificao}"
                     alt="hotel photo">
                 </div>
                 <div class="col">
                   <mat-card-content>
                     <div class="row"></div>
-                    <p>{{trip.Classificacao}}</p>                  
+                    <ngb-rating [rate]="trip.Classificacao" >
+                        <ng-template let-fill="fill" let-index="index">
+                          <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                        </ng-template>
+                    </ngb-rating>                    
                     <div class="row">
-                        <div>{{trip.Nome}}</div>
-                        <div>{{trip.Localizacao}}</div>
-                    </div>                    
-                    <div class="row">
-                        <p>{{trip.Preco}}</p>
-                    </div>
-                    
-                  </mat-card-content>
-                </div>
+                        <div class = "title-hotel">{{trip.Nome}}</div>
+                        <div class = " title-localizacao">{{trip.Localizacao}}</div>
               </div>
-            </mat-card>
+              <div class="d-flex justify-content-end">
+                <div class="preco">R$ {{trip.Preco}}</div>
+              </div>
+              </mat-card-content>
+            </div>
+          </div>
+          </mat-card>
           </a>
         </ul>
       </div>
-    </ul>
-  </div>
+      </ul>
+    </div>
   <ng-template #msgBlock>
     <p class="text-center">Nenhum hotel cadastro para essa localização</p>
   </ng-template>

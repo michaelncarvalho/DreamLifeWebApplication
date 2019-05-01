@@ -1,4 +1,14 @@
-.menu-text{
-    background-color: #2FAEFE;
+.mat-menu-item {
+    font-size: 16px;
+    color: white !important;
+    font-weight: bold;
+  }
 
+button.mat-menu-item{
+    background-color: #2FAEFE;
+}
+
+button.mat-menu-item:hover { 
+    background-color: lightblue;
+    color: #fff !important;
 }

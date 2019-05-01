@@ -7,6 +7,19 @@
     padding-top: 25px;
 }
 
-table {
-    width: 100%;
-  }
+
+  table { 
+    background-color:white;
+    width: 60%;
+    margin:auto;
+}
+
+th {
+    background-color:#1E6FA2;
+    color: white;
+}
+
+tr td:last-child{
+    width:1%;
+    white-space:nowrap;
+}

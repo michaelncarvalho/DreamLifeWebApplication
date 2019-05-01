@@ -4,7 +4,7 @@
 
 <div *ngIf = "hoteis == null; else elseBlock"> <p class = "text-center">Nenhuma cidade cadastrada</p></div>
 <ng-template #elseBlock>
-    <table mdbTable >
+    <table mdbTable class = "table table-bordered table-hover ">
         <thead class="grey lighten-1 black-text">
           <tr>
             <th *ngFor="let head of headElements" scope="col">{{head}} </th>

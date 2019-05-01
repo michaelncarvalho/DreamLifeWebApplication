@@ -68,6 +68,6 @@ export class CadastroCidadeComponent {
   public AddIcon = require("./plus.svg"); 
   public EditDataIcon = require("./pencil-striped-symbol-for-interface-edit-buttons.svg");
   public RemoveIcon = require ("./garbage.svg"); 
-  headElements = ['Cidade', 'País', 'Ações'];
+  headElements = ['CIDADE', 'PAÍS', 'AÇÕES'];
 
 }

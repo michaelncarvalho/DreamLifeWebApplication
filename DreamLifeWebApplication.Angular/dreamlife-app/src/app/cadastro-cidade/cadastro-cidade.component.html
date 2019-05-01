@@ -6,10 +6,10 @@
   <div class="form-container">
     <form #myform="ngForm" (ngSubmit)="onSubmit(myform)" class="form-group">
       <div class="row justify-content-center">
-        <input name="Nome" type="text" class="form-input form-cadastro form-control" id="exampleInputEmail1"
+        <input name="Nome" type="text" class="form-input form-cadastro form-control" id="nomeCidade"
           placeholder="Cidade" ngModel required>
 
-        <input name="Pais" type="text" class="form-input form-cadastro form-control" id="exampleInputEmail1"
+        <input name="Pais" type="text" class="form-input form-cadastro form-control" id="nomePais"
           placeholder="País" ngModel required>
 
         <input type="image" class="icon" name="add" [src]="AddIcon">
@@ -21,7 +21,7 @@
     <p class="text-center">Nenhuma cidade cadastrada</p>
   </div>
   <ng-template #elseBlock>
-    <table mdbTable>
+    <table class = "table table-bordered table-hover" mdbTable>
       <thead class="grey lighten-1 black-text">
         <tr>
           <th *ngFor="let head of headElements" scope="col">{{head}} </th>

@@ -21,56 +21,47 @@
         <input type="image" class="icon" name="add" [src]="PlaceHolderIcon">
       </div>
     </form>
+  </div>
 
 
-    <div *ngIf="selectedValue!= null" class="form-container">
-      <form [formGroup]="myform" (ngSubmit)="onConcluir()" class="form-group">
-        <div class="row ">
-          <input formControlName="Nome" type="text" class="form-input form-cadastro form-control" id="nomeHotel"
-            placeholder="Nome Hotel">
-        </div>
-        <div class="row">
-          <input formControlName="Localizacao" type="text" class="form-input form-cadastro form-control"
-            id="localizacao" placeholder="Endereço">
-        </div>
-        <div class="row ">
-          <input formControlName="Preco" type="number" class="form-input form-cadastro form-control" id="preco"
-            placeholder="Preço diária">
-          <fieldset>
-            <label for="classificacao" class="classificacao">Classificação: </label>
-            <ngb-rating [(rate)]="currentRate" (max)=5 formControlName="Classificacao">
-              <ng-template let-fill="fill" let-index="index">
-                <span class="star" [class.filled]="fill === 100">&#9733;</span>
-              </ng-template>
-            </ngb-rating>
-          </fieldset>
-        </div>
-        <div class="row">
-          <fieldset>
-            <label for="descricao">Descrição</label>
-            <textarea id="descricao" formControlName="Descricao"></textarea><br><br>
-          </fieldset>
-        </div>
-        <!-- 
-       <div class="row">
-          <label>Upload Imagem: </label>
-        <fieldset>            
-            <label for="uploadImagem" class="custom-file-upload"> 
-                <input type="file" class = "upload" name="imagem" accept="image/*" />Selecionar arquivo...
-              </label>            
-          </fieldset>
+
+  <div *ngIf="selectedValue!= null" class="form-container">
+    <form [formGroup]="myform" (ngSubmit)="onConcluir()" class="form-group">
+      <div class="row justify-content-center">
+        <input formControlName="Nome" type="text" class="hotel-form form-input form-cadastro form-control" id="nomeHotel"
+          placeholder="Nome Hotel">
       </div>
-     -->
-        <div class="row">
-          <div class="col">
-            <button class="button">Concluir Cadastro</button>
-          </div>
-          <div class="col">
-            <a><img class="deletar-icone" [src]=GarbageIcon (click)="limparForm()" /> Limpar </a>
-          </div>
+      <div class="row justify-content-center">
+        <input formControlName="Localizacao" type="text" class="hotel-form form-input form-cadastro form-control" id="localizacao"
+          placeholder="Endereço">
+      </div>
+      <div class="row justify-content-center ">
+        <input formControlName="Preco" type="number" class="preco-input form-input form-cadastro form-control" id="preco"
+          placeholder="Preço diária">
+        <fieldset>
+          <label for="classificacao" class=" form-label classificacao">Classificação: </label>
+          <ngb-rating [(rate)]="currentRate" formControlName="Classificacao">
+            <ng-template let-fill="fill" let-index="index">
+              <span class="star" [class.filled]="fill === 100">&#9733;</span>
+            </ng-template>
+          </ngb-rating>
+        </fieldset>
+      </div>
+      <div class="row-lg-4">
+        <fieldset>
+          <label for="descricao" class = "form-label"> Descrição</label>
+          <textarea id="descricao" formControlName="Descricao"></textarea><br><br>
+        </fieldset>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button class="button">Concluir Cadastro</button>
         </div>
-      </form>
-    </div>
+        <div class="col">
+          <a><img class="deletar-icone" [src]=GarbageIcon (click)="limparForm()" /> Limpar </a>
+        </div>
+      </div>
+    </form>
   </div>
 
 </div>

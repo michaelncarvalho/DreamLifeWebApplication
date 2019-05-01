@@ -1,7 +1,7 @@
 import { Component, Input, ViewChild, SimpleChanges } from "@angular/core";
 import { Trip } from "./trip";
 import { TripService } from "./trip.service";
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { NgbModal, NgbRatingConfig } from "@ng-bootstrap/ng-bootstrap";
 import { MenuDescricaoComponent } from "src/app/menu-descricao/menu-descricao.component";
 
 
@@ -15,9 +15,12 @@ export class TripComponent {
 
   @Input() trips: Trip[] = [];
   @Input() hotelIdModel: number;
- 
 
-  constructor(private tripService: TripService, private modalService: NgbModal) { }
+  constructor(private tripService: TripService, private modalService: NgbModal, config: NgbRatingConfig) 
+  { 
+    config.max = 5;
+    config.readonly = true;
+  }
 
   
  selectedValue: string;
@@ -38,7 +41,7 @@ export class TripComponent {
 
   openVerticallyCentered(content) {
     this.modalService.open(content, { 
-      size: 'lg',
+      size: "lg",
       centered: true,
     });
   }

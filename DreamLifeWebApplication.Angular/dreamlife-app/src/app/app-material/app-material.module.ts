@@ -19,7 +19,7 @@ import { MatFormFieldModule, MatSelectModule, MatTableModule, MatDatepickerModul
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    MatCardModule  
+    MatCardModule
   ],
   declarations: []
 })

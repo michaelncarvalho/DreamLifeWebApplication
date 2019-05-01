@@ -22,7 +22,7 @@
    flex-direction: row;
    border-radius: 40px 40px 40px 40px;
    background-color: white;
-   width:  500px;
+   width:  550px;
    height: 208px;
    min-width: stretch;
    margin: 25px;
@@ -34,4 +34,55 @@
  .card-image{
     height: 100%;
     width:  100%;
+ }
+
+ .modal-title{
+    font-size: 50px;    
+    font-weight: 600;
+    font-family: 'Segoe UI';
+ }
+
+ .modal-image{
+   height: 100%;
+   width:  100%;
+}
+ 
+.star {
+   font-size: 180%;
+   color: #b0c4de;
+ }
+ .filled {
+   color: #EFCE4A;
+ }
+
+.title-hotel{
+   font-family: 'Segoe UI';
+   color: #122C34;
+   font-size: 30px;
+   font-weight: 600;
+}
+
+.title-localizacao{
+   color: #777272;
+   font-family: 'Segoe UI';
+   font-size: 15px;
+}
+
+.preco{
+   color: #1E6FA2;
+   font-family: 'Segoe UI';
+   font-size: 35px;
+   font-weight: 600;
+   text-align: right;
+}
+
+.modal-xl .modal-lg {
+   max-width: 250px;
+ }
+
+ .descricao-texto{
+    color:#122C34;
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    text-align: justify;
  }
