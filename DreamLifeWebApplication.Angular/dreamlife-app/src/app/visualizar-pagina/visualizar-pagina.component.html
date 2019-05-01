@@ -1,3 +1,24 @@
 <div class = "card">
     <h1 class = "title-page"> Visualizar Hotéis</h1>
 </div>
+
+<div *ngIf = "hoteis == null; else elseBlock"> <p class = "text-center">Nenhuma cidade cadastrada</p></div>
+<ng-template #elseBlock>
+    <table mdbTable >
+        <thead class="grey lighten-1 black-text">
+          <tr>
+            <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let hotel of hoteis">
+            <td scope = "row">{{hotel.Nome}}</td>
+            <td>{{hotel.Cidade.Nome}}, {{hotel.Cidade.Pais}}</td>
+            <td> 
+              <a hfef="#" ><img [src]=EditDataIcon alt="Editar Cidade" height="30" width="30"></a>  
+              <a hfef="#" (click) = "onDelete(hotel.Id)"><img [src]=RemoveIcon alt="Deletar Cidade" height="30" width="30"></a> 
+            </td> 
+          </tr>
+        </tbody>
+      </table>
+</ng-template>

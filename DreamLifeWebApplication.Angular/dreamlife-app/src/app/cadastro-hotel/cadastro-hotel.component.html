@@ -2,7 +2,7 @@
   <h1 class="title-page"> Cadastrar Hotel</h1>
 </div>
 
-<div *ngIf= "formConcluido" class = "cadastro-concluido-card">
+<div *ngIf= "formConcluido && selectedValue == undefined" class = "cadastro-concluido-card">
     <h2 class = "title-pop-up">Cadastro realizado com sucesso!</h2>
 </div>
 
@@ -30,11 +30,11 @@
           placeholder="Nome Hotel" >
       </div>
       <div class="row">
-        <input formControlName="Endereco" type="text" class="form-input form-cadastro form-control" id="endereco"
+        <input formControlName="Localizacao" type="text" class="form-input form-cadastro form-control" id="localizacao"
           placeholder="Endereço" >
       </div>
       <div class="row ">
-        <input formControlName="Preco" type="number" class="form-input form-cadastro form-control" id="endereco"
+        <input formControlName="Preco" type="number" class="form-input form-cadastro form-control" id="preco"
           placeholder="Preço diária" >
         <fieldset>
           <label for="classificacao" class="classificacao">Classificação: </label>
@@ -51,21 +51,22 @@
           <textarea id="descricao" formControlName="Descricao" ></textarea ><br><br>
         </fieldset>
       </div>
-     <!-- <div class="row">
+     <!-- 
+       <div class="row">
           <label>Upload Imagem: </label>
-          <input type="text" name = "imagem" class = "form-input form-cadastro form-control">  
         <fieldset>            
             <label for="uploadImagem" class="custom-file-upload"> 
                 <input type="file" class = "upload" name="imagem" accept="image/*" />Selecionar arquivo...
               </label>            
           </fieldset>
-      </div> -->
+      </div>
+     -->
       <div class ="row">
         <div class = "col">
             <button class="button">Concluir Cadastro</button>  
         </div>
         <div class = "col">
-            <a><img class ="deletar-icone" [src]= GarbageIcon /> Deletar </a>
+            <a><img class ="deletar-icone" [src]= GarbageIcon (click) = "limparForm()"/> Limpar </a>
         </div>         
       </div>      
     </form>

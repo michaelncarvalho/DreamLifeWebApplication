@@ -30,8 +30,8 @@ export class CadastroCidadeComponent {
   ngOnInit() {
     this.getCidades()
       .subscribe(cidades => {
-        this.cidades = cidades
-        console.log(this.cidades)
+        this.cidades = cidades;
+        console.log(this.cidades);
       });
   }
 

@@ -29,7 +29,7 @@ export class CadastroHotelComponent implements OnInit {
 
   myform = new FormGroup( {
     Nome: new FormControl(),
-    Endereco: new FormControl(),
+    Localizacao: new FormControl(),
     Preco: new FormControl(),
     Classificacao: new FormControl(),
     Descricao: new FormControl(),
@@ -67,6 +67,10 @@ onConcluir(){
     
   this.myform.reset();
   this.selectedValue = undefined;
+}
+
+limparForm(){
+  this.myform.reset();
 }
 
   public PlaceHolderIcon = require("./placeholder.svg"); 

@@ -58,6 +58,7 @@ namespace DreamLifeWeb_api.Controllers
                     Classificacao = hotel.Classificacao,
                     Descricao = hotel.Descricao,
                     CidadeId = hotel.CidadeId,
+                    Localizacao = hotel.Localizacao,
                     Cidade = cidade                    
                 });
                 return new HttpResponseMessage(HttpStatusCode.Created);
@@ -103,7 +104,7 @@ namespace DreamLifeWeb_api.Controllers
 
                 Hotel hotel = new Hotel();
                 hotel = hotelRepositorio.SelecionarPorId(id);
-               hotelRepositorio.Excluir(hotel);
+                hotelRepositorio.Excluir(hotel);
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
         }
