@@ -58,13 +58,7 @@ namespace DreamLifeWebApplication.Repositorio
             }
         }
 
-        /*public List<Viagem> SelecionarTodosPorData(DateTime data)
-        {
-            using (ApplicationDbContext contexto = new ApplicationDbContext())
-            {
-                return contexto.Viagens.Include("Hotel").Where(v => v.Data == data ).ToList();
-            }
-        }*/
+        
 
         public IEnumerable<Viagem> SelecionarPorQuery(KeyValuePair<string, string> keyValuePair)
         {
@@ -75,14 +69,6 @@ namespace DreamLifeWebApplication.Repositorio
                 return contexto.Viagens.Include("Hotel")
                     .Where(v => keyValuePair.Key == "Hotel.CidadeId" && cidadeId == v.Hotel.CidadeId)
                     .ToList();
-
-
-                /*return contexto.Viagens.Include("Hotel")
-                    .Where(h => keyValuePair.Key == "data" && data == h.Data)
-                    .GroupBy(v => v.HotelId)
-                    .Select( x => new { }  ).ToList(); 
-                //int value = Convert.ToInt32(keyValuePair.Value);
-                //return contexto.Viagens.Include("Hotel").Where(h => keyValuePair.Key == "HotelId" && value == h.HotelId).Distinct().ToList(); */
             }
         }
 

@@ -41,13 +41,7 @@ namespace DreamLifeWeb_api.Controllers
             return viagemRepositorio.SelecionarPorId(id);
         }
 
-        /*//GET: trips/Viagens?data={data}
-        [HttpGet]
-        public List<Viagem> Get(DateTime data)
-        {
-            ViagemRepositorio viagemRepositorio = new ViagemRepositorio();
-            return viagemRepositorio.SelecionarTodosPorData(data);
-        } */
+       
 
         //POST: trips/Viagens 
         [HttpPost]
@@ -57,16 +51,7 @@ namespace DreamLifeWeb_api.Controllers
 
             if (ModelState.IsValid && viagem != null)
             {
-                /*IRepositorio<Hotel> repositorioCidade = new HotelRepositorio();
-                Hotel hotel = repositorioCidade.SelecionarPorId(viagem.HotelId);
-                viagemRepositorio.Inserir(new Viagem()
-                {
-                   HotelId = viagem.HotelId,
-                   Data = DateTime.Now,
-                   QuantidadePessoas = viagem.QuantidadePessoas,
-                   ModalidadeViagem = viagem.ModalidadeViagem,
-                   Hotel = hotel
-                }); */
+              
                 viagemRepositorio.Inserir(viagem);
                 return new HttpResponseMessage(HttpStatusCode.Created);
             }
@@ -81,15 +66,10 @@ namespace DreamLifeWeb_api.Controllers
         [ActionName("Viagens")]
         public HttpResponseMessage PutCidade(Viagem viagem)
         {
-            //IRepositorio<Hotel> repositorioCidade = new HotelRepositorio();
-            //Hotel hotel = repositorioCidade.SelecionarPorId(viagem.HotelId);
+           
             if (ModelState.IsValid && viagem != null)
             {
-                Viagem viagemUpdate = viagemRepositorio.SelecionarPorId(viagem.Id);
-                //viagemUpdate.HotelId = viagem.HotelId;
-               // viagemUpdate.Hotel = hotel;
-               // viagemUpdate.ModalidadeViagem = viagem.ModalidadeViagem;
-               // viagemUpdate.QuantidadePessoas = viagem.QuantidadePessoas;
+                Viagem viagemUpdate = viagemRepositorio.SelecionarPorId(viagem.Id);               
                 viagemRepositorio.Atualizar(viagem);
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }

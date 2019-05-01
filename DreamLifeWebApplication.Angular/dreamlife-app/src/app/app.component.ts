@@ -13,13 +13,6 @@ import { AppMaterialModule } from './app-material/app-material.module';
 
 export class AppComponent {  
 
-  /*constructor(http: HttpClient) {
-     http
-     .get<Object[]>('http://localhost:50214/trips/Viagens')
-     .subscribe(trips => this.trips = trips);
-     //.subscribe(trips => console.log(trips));
-  } */
-
   constructor(public dialog: AppMaterialModule) { 
    }
   

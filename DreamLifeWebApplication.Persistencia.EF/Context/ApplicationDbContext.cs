@@ -25,8 +25,7 @@ namespace DreamLifeWebApplication.Persistencia.EF
             modelBuilder
                 .HasDefaultSchema("mytrips")
                 .Entity<Viagem>()
-                .HasRequired(v => v.Hotel);
-            
+                .HasRequired(v => v.Hotel);            
             
          
         }
