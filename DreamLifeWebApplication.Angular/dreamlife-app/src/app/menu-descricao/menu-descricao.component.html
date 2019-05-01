@@ -1,0 +1,41 @@
+<div *ngIf="flag" class="container">
+    <div class="row">
+        <div class="col-6 col-lg col-sm-2 col-xs">
+            <img class="icon img-responsive" [src]=PlaceHolderIcon>
+
+            <mat-form-field class="mat-form-field">
+                <mat-select [(value)]=selectedValue (selectionChange)="sendMessage()">
+                    <mat-option *ngFor="let cidade of cidades" [value]="cidade.Id">
+                        {{cidade.Nome}}, {{cidade.Pais}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col col-lg col-sm-4 col-xs">
+            <img class="icon img-responsive" [src]=CalendarIcon>
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="col col-lg col-sm-2 col-xs">
+            <img class="icon img-responsive" [src]=ManUserIcon>
+            <mat-form-field>
+                    <input matInput value="1 Guest" >
+            </mat-form-field>            
+        </div>
+        <div class="col col-lg col-sm-2 col-xs">
+            <img class="icon img-responsive" [src]=CrownIcon>
+            <mat-form-field>
+                    <input matInput value="First Class" >
+            </mat-form-field>  
+        </div>
+        <div class="col col-lg col-sm-2 col-xs-6">
+            <img class="icon img-responsive" [src]=CreditCardIcon>
+            <mat-form-field>
+                    <input matInput value="800$" >
+            </mat-form-field>  
+        </div>
+    </div>
+</div>

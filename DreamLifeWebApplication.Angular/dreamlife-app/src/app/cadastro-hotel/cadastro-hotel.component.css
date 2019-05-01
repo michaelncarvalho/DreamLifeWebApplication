@@ -121,3 +121,8 @@ input[type="file"] {
     width: 25px;
     height: 40.18px;
 }
+
+  
+.mat-form-field{
+    width: 20% !important;
+  }

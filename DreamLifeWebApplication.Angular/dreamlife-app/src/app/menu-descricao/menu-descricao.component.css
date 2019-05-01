@@ -1,0 +1,9 @@
+.icon{
+    height: 34%;
+    width: 34%;
+    color: #1E6FA2;
+}
+
+::ng-deep .mat-form-field{
+    width: 66% !important;
+  }

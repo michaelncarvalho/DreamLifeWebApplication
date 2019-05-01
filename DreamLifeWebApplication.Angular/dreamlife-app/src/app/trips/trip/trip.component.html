@@ -1,38 +1,45 @@
 <!-- Descricao hotel content-->
 
-<div class = "card">
-      <menu-viagens class ="itens-menu"> </menu-viagens>
+<div class="card">
+  <menu-descricao class="itens-menu" (messageEvent)="receiveMessage($event)"> </menu-descricao>
 </div>
 
-<div class="container">
-  <ul>
-    <div class="row">
-      <ul *ngFor="let trip of trips; let i = index">
-        <a>
-        <div class="card-itens col-sm" (click)="openVerticallyCentered(content)">
-          <!-- Content of the modal pop up -->
-          <ng-template #content let-modal>
-            <div class="modal-header">
-              <h4 class="modal-title">{{ trip.Nome }}</h4>
-              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>{{trip.Descricao}}&hellip;</p>
-              <p>{{trip.Classificacao}}</p>
-              <p>{{trip.Cidade.Nome}}</p>
-              <p>{{trip.Cidade.Pais}}</p>
-              <h3> </h3>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
-            </div>
-          </ng-template>
-          {{trip.Nome}} , {{trip.Descricao}}
-        </div>
-      </a>
-      </ul>
-    </div>
-  </ul>
+<div *ngIf="selectedValue == undefined; else elseBlock">
+  <p class="text-center">Escolha uma localização</p>
 </div>
+
+<ng-template #elseBlock>
+  <div *ngIf="trips.length != 0 ; else msgBlock" class="container">
+    <ul>
+      <div class="row">
+        <ul *ngFor="let trip of trips; let i = index">
+          <a>
+            <div class="card-itens col-sm" (click)="openVerticallyCentered(content)">
+              <!-- Content of the modal pop up -->
+              <ng-template #content let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title">{{ trip.Nome }}</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>{{trip.Descricao}}&hellip;</p>
+                  <p>{{trip.Classificacao}}</p>
+                  <p>{{trip.Cidade.Nome}}</p>
+                  <p>{{trip.Cidade.Pais}}</p>
+                  <h3> </h3>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+                </div>
+              </ng-template>
+              {{trip.Nome}} , {{trip.Descricao}}
+            </div>
+          </a>
+        </ul>
+      </div>
+    </ul> 
+  </div>
+  <ng-template #msgBlock> <p class = "text-center">Nenhum hotel cadastro para essa localização</p>  </ng-template>
+</ng-template>

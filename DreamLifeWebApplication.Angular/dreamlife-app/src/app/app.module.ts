@@ -19,7 +19,8 @@ import { VisualizarPaginaComponent } from './visualizar-pagina/visualizar-pagina
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbRating, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MenuModule } from 'src/menu/menu.module';
+import { MenuDescricaoComponent } from './menu-descricao/menu-descricao.component';
+import { MatNativeDateModule, MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { MenuModule } from 'src/menu/menu.module';
     CommonModule,
     FormsModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule  
   ],
   exports: [
     AppComponent

@@ -8,11 +8,12 @@ const API = 'http://localhost:50214';
 export class TripService {
 
     private dateFilter: string = "2019-05-28T00:00:00";
-    constructor(private http: HttpClient) { }
-
     
-    getTrips(){
-        let params = new HttpParams().set('CidadeId', '1');
+    constructor(private http: HttpClient) { }    
+    
+    getTrips(selectedValue: string){
+        console.log(selectedValue);
+        let params = new HttpParams().set('CidadeId', selectedValue);
         return this.http
         .get<Trip[]>(API + '/trips/Hotels', {params: params});        
     }
