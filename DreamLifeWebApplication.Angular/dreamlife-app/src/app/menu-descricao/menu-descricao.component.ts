@@ -1,5 +1,6 @@
 import { Component, Input, EventEmitter, Output } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { FormControl } from "@angular/forms";
 
 
 export interface Cidade {
@@ -28,7 +29,7 @@ export class MenuDescricaoComponent {
   public CreditCardIcon = require("./img/credit-card.svg");
   public flag: boolean;
 
- 
+  date = new FormControl(new Date());
   selectedValue: string;
 
   @Output() messageEvent = new EventEmitter<string>();

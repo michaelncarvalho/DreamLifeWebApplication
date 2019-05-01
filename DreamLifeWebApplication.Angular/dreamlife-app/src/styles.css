@@ -51,7 +51,16 @@
       align-items: center;   
   
    }
-   
+  
+  .page-content{
+      height: 100%;
+      width: 100%;
+      background-color: #F2F2F2;   
+      min-height: fit-content;
+      padding-top: 15%;
+      padding-left: 10%;
+    }
+     
    .card {      
     top: 25%;
     width: 80%;
@@ -63,16 +72,6 @@
     box-shadow: 1px 5px 3px gray;
   }
   
-  .page-content{
-      height: 68.58%;
-      background-color: #F2F2F2;   
-      min-height: fit-content;
-    }
-  
-    .page-content{    
-       padding-top: 15%;
-       padding-left: 10%;   
-    }
   
     a, .s-link {
       color: #D58E10;

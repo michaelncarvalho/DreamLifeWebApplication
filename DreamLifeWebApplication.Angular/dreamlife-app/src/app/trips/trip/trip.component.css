@@ -1,5 +1,4 @@
-
- .card-itens{  
+.card-itens{  
    flex-direction: row;
    border-radius: 40px 40px 40px 40px;
    background-color: white;
@@ -14,7 +13,7 @@
 
 .itens-menu{     
    position: relative;
-   top: 30%;
+   top: 15%;
    text-align: center;
    min-height: fit-content;
 }
