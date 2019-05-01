@@ -59,6 +59,12 @@ onConcluir(){
   this.formConcluido = true;
   this.myform.value.CidadeId  = this.selectedValue;
   console.log(this.myform.value);
+  this.http.post(API + 'Hotels', this.myform.value)
+  .subscribe(res => { 
+    console.log('sucess', res);},
+    error => console.log('error', error)
+    );
+    
   this.myform.reset();
   this.selectedValue = undefined;
 }
