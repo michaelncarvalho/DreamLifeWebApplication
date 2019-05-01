@@ -15,7 +15,6 @@ export class TripComponent {
 
   @Input() trips: Trip[] = [];
   @Input() hotelIdModel: number;
-
  
 
   constructor(private tripService: TripService, private modalService: NgbModal) { }

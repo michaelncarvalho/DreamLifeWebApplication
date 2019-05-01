@@ -17,3 +17,21 @@
    text-align: center;
    min-height: fit-content;
 }
+
+.example-card {
+   flex-direction: row;
+   border-radius: 40px 40px 40px 40px;
+   background-color: white;
+   width:  500px;
+   height: 208px;
+   min-width: stretch;
+   margin: 25px;
+   box-shadow: 1px 5px 3px gray;
+   align-content: center;
+ }
+ 
+
+ .card-image{
+    height: 100%;
+    width:  100%;
+ }
