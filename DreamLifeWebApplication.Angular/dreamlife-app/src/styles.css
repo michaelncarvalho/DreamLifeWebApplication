@@ -59,8 +59,7 @@
     align-self: center;
     position: absolute;
     margin: 0 auto; 
-    border-radius: 40px 40px 40px 40px;
-    min-height: fit-content;
+    border-radius: 40px 40px 40px 40px;   
     box-shadow: 1px 5px 3px gray;
   }
   
