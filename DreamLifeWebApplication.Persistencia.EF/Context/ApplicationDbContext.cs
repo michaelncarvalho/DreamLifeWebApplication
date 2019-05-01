@@ -1,11 +1,5 @@
 ﻿using DreamLifeWebApplication.Dominio;
-using DreamLifeWebApplication.Persistencia.EF.Context;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DreamLifeWebApplication.Persistencia.EF
 {
@@ -15,17 +9,12 @@ namespace DreamLifeWebApplication.Persistencia.EF
 
         public ApplicationDbContext() : base("ViagensContext")
         {
-            //Database.SetInitializer<ApplicationDbContext>(null);
+            
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.Configuration.LazyLoadingEnabled = false;
-            //modelBuilder.HasDefaultSchema("mytrips").Entity<Cidade>().HasKey(c => c.Id);
-
-            //modelBuilder.Entity<Hotel>().HasRequired(c => c.Cidade);
-
-            //modelBuilder.HasDefaultSchema("mytrips")
             modelBuilder
                 .HasDefaultSchema("mytrips")
                 .Entity<Hotel>()
