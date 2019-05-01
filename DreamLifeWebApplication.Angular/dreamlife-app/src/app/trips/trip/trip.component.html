@@ -9,7 +9,7 @@
 </div>
 
 <ng-template #elseBlock>
-  <div *ngIf="trips.length != 0 ; else msgBlock" class="container">
+  <div *ngIf="trips.length != 0 ; else msgBlock">
     <ul>
       <div class="row">
         <ul *ngFor="let trip of trips; let i = index">

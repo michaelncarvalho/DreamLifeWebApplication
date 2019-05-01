@@ -5,5 +5,5 @@
 }
 
 ::ng-deep .mat-form-field{
-    width: 66% !important;
+    width: 66% ;
   }
