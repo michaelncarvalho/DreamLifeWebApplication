@@ -239,7 +239,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="App_Data\trips.json" />
     <Content Include="Views\Trips\City.cshtml" />
-    <Content Include="tsconfig.json" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Teste.cshtml" />

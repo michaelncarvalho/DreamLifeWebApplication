@@ -39,6 +39,7 @@ export class CadastroHotelComponent implements OnInit {
 
   constructor(private http: HttpClient, config: NgbRatingConfig) {
     config.max = 5;
+    config.readonly = false;
    }
 
   ngOnInit() {
