@@ -11,7 +11,7 @@ export interface Cidade {
 }
 
 //const API = 'http://localhost:50214/trips/';
-const API = 'http://177.105.34.12/DreamLifeWeb_api/trips/';
+const API = 'http://localhost/DreamLifeWeb_api/trips/';
 
 
 @Component({

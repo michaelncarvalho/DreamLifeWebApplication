@@ -11,7 +11,8 @@ namespace DreamLifeWeb_api
     {
         public static void Register(HttpConfiguration config)
         {
-            config.EnableCors();            
+            var cors = new EnableCorsAttribute("http://localhost", "*", "*");
+            config.EnableCors(cors);            
 
             // Web API routes
             config.MapHttpAttributeRoutes();
@@ -19,8 +20,8 @@ namespace DreamLifeWeb_api
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 //routeTemplate: "api/{controller}/{id}",
-                routeTemplate: "trips/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "trips/{controller}/{action}/{id}",
+                defaults: new { id = RouteParameter.Optional, action = RouteParameter.Optional}
             );
 
           

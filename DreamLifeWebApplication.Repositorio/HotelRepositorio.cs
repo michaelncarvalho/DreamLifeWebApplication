@@ -16,8 +16,8 @@ namespace DreamLifeWebApplication.Repositorio
         {
             using (ApplicationDbContext contexto = new ApplicationDbContext())
             {
-                Cidade cidade = contexto.Cidades.Find(entidade.CidadeId);
-                entidade.Cidade = cidade;
+                //Cidade cidade = contexto.Cidades.Find(entidade.CidadeId);
+                //entidade.Cidade = cidade;
                 contexto.Hoteis.Add(entidade);
                 contexto.SaveChanges();
             }

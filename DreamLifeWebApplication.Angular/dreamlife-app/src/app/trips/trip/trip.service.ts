@@ -2,8 +2,8 @@ import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Trip } from "./trip";
 
-//const API = 'http://localhost:50214';
-const API = 'http://177.105.34.12/DreamLifeWeb_api/trips/';
+const API = 'http://localhost/DreamLifeWeb_api/trips/';
+//const API = 'http://177.105.34.12/DreamLifeWeb_api/trips/';
 
 
 @Injectable({ providedIn: 'root' })

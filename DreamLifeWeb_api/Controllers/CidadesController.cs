@@ -12,7 +12,7 @@ using System.Web.Http.Cors;
 
 namespace DreamLifeWeb_api.Controllers
 {
-   [EnableCors(origins: "*", headers: "*", methods: "*")]
+   //[EnableCors(origins: "http://localhost/dreamLifeInterface", headers: "*", methods: "*")]
     public class CidadesController : ApiController
     {
         private IRepositorio<Cidade> cidadeRepositorio = new CidadeRepositorio();

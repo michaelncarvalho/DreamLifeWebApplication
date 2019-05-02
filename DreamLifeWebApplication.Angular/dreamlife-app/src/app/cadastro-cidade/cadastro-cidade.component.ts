@@ -10,8 +10,8 @@ export interface Cidade {
   Pais: string;
 }
 
-//const API = 'http://localhost:50214/trips/';
-const API = 'http://177.105.34.12/DreamLifeWeb_api/trips/';
+const API = 'http://localhost/DreamLifeWeb_api/trips/';
+//const API = 'http://177.105.34.12/DreamLifeWeb_api/trips/';
 
 
 @Component({
@@ -55,7 +55,7 @@ export class CadastroCidadeComponent {
   }
 
   onRemove(cidadeId) {    
-    this.http.delete(API + 'Cidades/' + cidadeId).subscribe(res => {
+    this.http.delete(API + 'Cidades/DeleteCidade/' + cidadeId).subscribe(res => {
       console.log('success', res);
       this.ngOnInit();
     },
