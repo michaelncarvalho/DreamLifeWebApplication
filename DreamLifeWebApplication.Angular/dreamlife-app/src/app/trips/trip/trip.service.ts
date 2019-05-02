@@ -2,7 +2,9 @@ import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Trip } from "./trip";
 
-const API = 'http://localhost:50214';
+//const API = 'http://localhost:50214';
+const API = 'http://177.105.34.12/DreamLifeWeb_api/trips/';
+
 
 @Injectable({ providedIn: 'root' })
 export class TripService {
@@ -15,7 +17,7 @@ export class TripService {
         console.log(selectedValue);
         let params = new HttpParams().set('CidadeId', selectedValue);
         return this.http
-        .get<Trip[]>(API + '/trips/Hotels', {params: params});        
+        .get<Trip[]>(API + 'Hotels', {params: params});        
     }
 
 }
