@@ -17,6 +17,7 @@ import { VisualizarPaginaComponent } from './visualizar-pagina/visualizar-pagina
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbRating, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TesteComponent } from './teste/teste.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgbRating, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DropdownMenuComponent,
     CadastroCidadeComponent,
     CadastroHotelComponent,
-    VisualizarPaginaComponent
+    VisualizarPaginaComponent,
+    TesteComponent
   ],
   entryComponents: [],
   imports: [
