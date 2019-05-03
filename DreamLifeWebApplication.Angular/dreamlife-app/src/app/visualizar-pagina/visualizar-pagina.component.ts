@@ -39,7 +39,7 @@ export class VisualizarPaginaComponent implements OnInit {
   }
 
   onDelete(hotelId: number){
-    this.http.delete(API + 'Hotels/' + hotelId)
+    this.http.delete(API + 'Hotels/DeleteHotel/' + hotelId)
     .subscribe(res => {
       console.log('sucess,', res);
       this.ngOnInit();

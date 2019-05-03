@@ -95,7 +95,7 @@ namespace DreamLifeWeb_api.Controllers
 
         [HttpDelete]
         //DELETE: trips/Hotels/id
-        public HttpResponseMessage Delete(int id)
+        public HttpResponseMessage DeleteHotel(int id)
         {
             if (id <= 0)
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
